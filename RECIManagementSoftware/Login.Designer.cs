@@ -30,55 +30,145 @@ namespace RECIManagementSoftware
         private void InitializeComponent()
         {
             this.panel_Login = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_Username = new System.Windows.Forms.TextBox();
+            this.panel_Bottom = new System.Windows.Forms.Panel();
+            this.button_Login = new System.Windows.Forms.Button();
+            this.label_InocorrectStatus = new System.Windows.Forms.Label();
+            this.label_Password = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel_Upper = new System.Windows.Forms.Panel();
             this.label_SignInTitle = new System.Windows.Forms.Label();
             this.panel_Login.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel_Bottom.SuspendLayout();
+            this.panel_Upper.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Login
             // 
-            this.panel_Login.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel_Login.Controls.Add(this.panel1);
+            this.panel_Login.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel_Login.Controls.Add(this.textBox1);
+            this.panel_Login.Controls.Add(this.textBox_Username);
+            this.panel_Login.Controls.Add(this.panel_Bottom);
+            this.panel_Login.Controls.Add(this.label_InocorrectStatus);
+            this.panel_Login.Controls.Add(this.label_Password);
+            this.panel_Login.Controls.Add(this.label1);
+            this.panel_Login.Controls.Add(this.panel_Upper);
             this.panel_Login.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Login.Location = new System.Drawing.Point(0, 0);
             this.panel_Login.Name = "panel_Login";
-            this.panel_Login.Size = new System.Drawing.Size(375, 366);
+            this.panel_Login.Size = new System.Drawing.Size(375, 316);
             this.panel_Login.TabIndex = 0;
             // 
-            // panel1
+            // textBox1
             // 
-            this.panel1.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel1.Controls.Add(this.label_SignInTitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 67);
-            this.panel1.TabIndex = 0;
+            this.textBox1.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(168, 163);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(151, 24);
+            this.textBox1.TabIndex = 3;
+            // 
+            // textBox_Username
+            // 
+            this.textBox_Username.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox_Username.Location = new System.Drawing.Point(168, 133);
+            this.textBox_Username.Name = "textBox_Username";
+            this.textBox_Username.Size = new System.Drawing.Size(151, 24);
+            this.textBox_Username.TabIndex = 3;
+            // 
+            // panel_Bottom
+            // 
+            this.panel_Bottom.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel_Bottom.Controls.Add(this.button_Login);
+            this.panel_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_Bottom.Location = new System.Drawing.Point(0, 262);
+            this.panel_Bottom.Name = "panel_Bottom";
+            this.panel_Bottom.Size = new System.Drawing.Size(375, 54);
+            this.panel_Bottom.TabIndex = 2;
+            // 
+            // button_Login
+            // 
+            this.button_Login.BackColor = System.Drawing.Color.MintCream;
+            this.button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Login.Font = new System.Drawing.Font("Clear Sans Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Login.Location = new System.Drawing.Point(264, 9);
+            this.button_Login.Name = "button_Login";
+            this.button_Login.Size = new System.Drawing.Size(99, 33);
+            this.button_Login.TabIndex = 0;
+            this.button_Login.Text = "Login";
+            this.button_Login.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_Login.UseVisualStyleBackColor = false;
+            // 
+            // label_InocorrectStatus
+            // 
+            this.label_InocorrectStatus.AutoSize = true;
+            this.label_InocorrectStatus.Font = new System.Drawing.Font("Clear Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_InocorrectStatus.ForeColor = System.Drawing.Color.Crimson;
+            this.label_InocorrectStatus.Location = new System.Drawing.Point(82, 214);
+            this.label_InocorrectStatus.Name = "label_InocorrectStatus";
+            this.label_InocorrectStatus.Size = new System.Drawing.Size(205, 18);
+            this.label_InocorrectStatus.TabIndex = 1;
+            this.label_InocorrectStatus.Text = "Inocorrect username or password";
+            // 
+            // label_Password
+            // 
+            this.label_Password.AutoSize = true;
+            this.label_Password.Font = new System.Drawing.Font("Clear Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_Password.Location = new System.Drawing.Point(61, 163);
+            this.label_Password.Name = "label_Password";
+            this.label_Password.Size = new System.Drawing.Size(67, 18);
+            this.label_Password.TabIndex = 1;
+            this.label_Password.Text = "Password:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Clear Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(61, 133);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 18);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "User name:";
+            // 
+            // panel_Upper
+            // 
+            this.panel_Upper.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel_Upper.BackgroundImage = global::RECIManagementSoftware.Properties.Resources.RECI_Background3;
+            this.panel_Upper.Controls.Add(this.label_SignInTitle);
+            this.panel_Upper.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Upper.Location = new System.Drawing.Point(0, 0);
+            this.panel_Upper.Name = "panel_Upper";
+            this.panel_Upper.Size = new System.Drawing.Size(375, 69);
+            this.panel_Upper.TabIndex = 0;
             // 
             // label_SignInTitle
             // 
-            this.label_SignInTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_SignInTitle.AutoSize = true;
-            this.label_SignInTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_SignInTitle.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label_SignInTitle.Location = new System.Drawing.Point(134, 9);
+            this.label_SignInTitle.BackColor = System.Drawing.Color.Transparent;
+            this.label_SignInTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label_SignInTitle.Font = new System.Drawing.Font("Fog Sans", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_SignInTitle.ForeColor = System.Drawing.Color.LightCyan;
+            this.label_SignInTitle.Location = new System.Drawing.Point(0, 0);
             this.label_SignInTitle.Name = "label_SignInTitle";
-            this.label_SignInTitle.Size = new System.Drawing.Size(88, 45);
+            this.label_SignInTitle.Size = new System.Drawing.Size(136, 65);
             this.label_SignInTitle.TabIndex = 0;
             this.label_SignInTitle.Text = "RECI";
+            this.label_SignInTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 366);
+            this.ClientSize = new System.Drawing.Size(375, 316);
             this.Controls.Add(this.panel_Login);
             this.Name = "Login";
             this.Text = "Login";
             this.panel_Login.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel_Login.PerformLayout();
+            this.panel_Bottom.ResumeLayout(false);
+            this.panel_Upper.ResumeLayout(false);
+            this.panel_Upper.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -86,7 +176,14 @@ namespace RECIManagementSoftware
         #endregion
 
         private System.Windows.Forms.Panel panel_Login;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_Upper;
         private System.Windows.Forms.Label label_SignInTitle;
+        private System.Windows.Forms.Panel panel_Bottom;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_Login;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_Username;
+        private System.Windows.Forms.Label label_InocorrectStatus;
+        private System.Windows.Forms.Label label_Password;
     }
 }

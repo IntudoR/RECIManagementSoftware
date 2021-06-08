@@ -15,6 +15,8 @@ namespace RECIManagementSoftware
         public Login()
         {
             InitializeComponent();
+
+            label_InocorrectStatus.Hide();
         }
     }
 }
