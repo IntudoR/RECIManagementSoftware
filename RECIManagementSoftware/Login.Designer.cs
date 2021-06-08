@@ -39,6 +39,9 @@ namespace RECIManagementSoftware
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Upper = new System.Windows.Forms.Panel();
             this.label_SignInTitle = new System.Windows.Forms.Label();
+            this.label_ServerName = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.checkBox_isRemoteServer = new System.Windows.Forms.CheckBox();
             this.panel_Login.SuspendLayout();
             this.panel_Bottom.SuspendLayout();
             this.panel_Upper.SuspendLayout();
@@ -47,11 +50,14 @@ namespace RECIManagementSoftware
             // panel_Login
             // 
             this.panel_Login.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel_Login.Controls.Add(this.checkBox_isRemoteServer);
             this.panel_Login.Controls.Add(this.textBox1);
+            this.panel_Login.Controls.Add(this.textBox2);
             this.panel_Login.Controls.Add(this.textBox_Username);
             this.panel_Login.Controls.Add(this.panel_Bottom);
             this.panel_Login.Controls.Add(this.label_InocorrectStatus);
             this.panel_Login.Controls.Add(this.label_Password);
+            this.panel_Login.Controls.Add(this.label_ServerName);
             this.panel_Login.Controls.Add(this.label1);
             this.panel_Login.Controls.Add(this.panel_Upper);
             this.panel_Login.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -105,7 +111,7 @@ namespace RECIManagementSoftware
             this.label_InocorrectStatus.AutoSize = true;
             this.label_InocorrectStatus.Font = new System.Drawing.Font("Clear Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_InocorrectStatus.ForeColor = System.Drawing.Color.Crimson;
-            this.label_InocorrectStatus.Location = new System.Drawing.Point(82, 214);
+            this.label_InocorrectStatus.Location = new System.Drawing.Point(86, 228);
             this.label_InocorrectStatus.Name = "label_InocorrectStatus";
             this.label_InocorrectStatus.Size = new System.Drawing.Size(205, 18);
             this.label_InocorrectStatus.TabIndex = 1;
@@ -127,9 +133,9 @@ namespace RECIManagementSoftware
             this.label1.Font = new System.Drawing.Font("Clear Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(61, 133);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 18);
+            this.label1.Size = new System.Drawing.Size(71, 18);
             this.label1.TabIndex = 1;
-            this.label1.Text = "User name:";
+            this.label1.Text = "Username:";
             // 
             // panel_Upper
             // 
@@ -155,6 +161,35 @@ namespace RECIManagementSoftware
             this.label_SignInTitle.TabIndex = 0;
             this.label_SignInTitle.Text = "RECI";
             this.label_SignInTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label_ServerName
+            // 
+            this.label_ServerName.AutoSize = true;
+            this.label_ServerName.Font = new System.Drawing.Font("Clear Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_ServerName.Location = new System.Drawing.Point(61, 103);
+            this.label_ServerName.Name = "label_ServerName";
+            this.label_ServerName.Size = new System.Drawing.Size(86, 18);
+            this.label_ServerName.TabIndex = 1;
+            this.label_ServerName.Text = "Server name:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(168, 103);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(151, 24);
+            this.textBox2.TabIndex = 3;
+            // 
+            // checkBox_isRemoteServer
+            // 
+            this.checkBox_isRemoteServer.AutoSize = true;
+            this.checkBox_isRemoteServer.Font = new System.Drawing.Font("Clear Sans Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox_isRemoteServer.Location = new System.Drawing.Point(168, 193);
+            this.checkBox_isRemoteServer.Name = "checkBox_isRemoteServer";
+            this.checkBox_isRemoteServer.Size = new System.Drawing.Size(102, 21);
+            this.checkBox_isRemoteServer.TabIndex = 4;
+            this.checkBox_isRemoteServer.Text = "remote server";
+            this.checkBox_isRemoteServer.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
@@ -185,5 +220,8 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.TextBox textBox_Username;
         private System.Windows.Forms.Label label_InocorrectStatus;
         private System.Windows.Forms.Label label_Password;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label_ServerName;
+        private System.Windows.Forms.CheckBox checkBox_isRemoteServer;
     }
 }
