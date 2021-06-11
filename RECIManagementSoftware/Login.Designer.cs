@@ -30,18 +30,18 @@ namespace RECIManagementSoftware
         private void InitializeComponent()
         {
             this.panel_Login = new System.Windows.Forms.Panel();
+            this.checkBox_isRemoteServer = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_ServerName = new System.Windows.Forms.TextBox();
             this.textBox_Username = new System.Windows.Forms.TextBox();
             this.panel_Bottom = new System.Windows.Forms.Panel();
             this.button_Login = new System.Windows.Forms.Button();
             this.label_InocorrectStatus = new System.Windows.Forms.Label();
             this.label_Password = new System.Windows.Forms.Label();
+            this.label_ServerName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Upper = new System.Windows.Forms.Panel();
             this.label_SignInTitle = new System.Windows.Forms.Label();
-            this.label_ServerName = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox_isRemoteServer = new System.Windows.Forms.CheckBox();
             this.panel_Login.SuspendLayout();
             this.panel_Bottom.SuspendLayout();
             this.panel_Upper.SuspendLayout();
@@ -52,7 +52,7 @@ namespace RECIManagementSoftware
             this.panel_Login.BackColor = System.Drawing.Color.AliceBlue;
             this.panel_Login.Controls.Add(this.checkBox_isRemoteServer);
             this.panel_Login.Controls.Add(this.textBox1);
-            this.panel_Login.Controls.Add(this.textBox2);
+            this.panel_Login.Controls.Add(this.textBox_ServerName);
             this.panel_Login.Controls.Add(this.textBox_Username);
             this.panel_Login.Controls.Add(this.panel_Bottom);
             this.panel_Login.Controls.Add(this.label_InocorrectStatus);
@@ -66,6 +66,18 @@ namespace RECIManagementSoftware
             this.panel_Login.Size = new System.Drawing.Size(375, 316);
             this.panel_Login.TabIndex = 0;
             // 
+            // checkBox_isRemoteServer
+            // 
+            this.checkBox_isRemoteServer.AutoSize = true;
+            this.checkBox_isRemoteServer.Font = new System.Drawing.Font("Clear Sans Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox_isRemoteServer.Location = new System.Drawing.Point(168, 193);
+            this.checkBox_isRemoteServer.Name = "checkBox_isRemoteServer";
+            this.checkBox_isRemoteServer.Size = new System.Drawing.Size(102, 21);
+            this.checkBox_isRemoteServer.TabIndex = 4;
+            this.checkBox_isRemoteServer.Text = "remote server";
+            this.checkBox_isRemoteServer.UseVisualStyleBackColor = true;
+            this.checkBox_isRemoteServer.Click += new System.EventHandler(this.checkBox_isRemoteServer_Click);
+            // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -74,6 +86,14 @@ namespace RECIManagementSoftware
             this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(151, 24);
             this.textBox1.TabIndex = 3;
+            // 
+            // textBox_ServerName
+            // 
+            this.textBox_ServerName.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox_ServerName.Location = new System.Drawing.Point(168, 103);
+            this.textBox_ServerName.Name = "textBox_ServerName";
+            this.textBox_ServerName.Size = new System.Drawing.Size(151, 24);
+            this.textBox_ServerName.TabIndex = 3;
             // 
             // textBox_Username
             // 
@@ -127,6 +147,16 @@ namespace RECIManagementSoftware
             this.label_Password.TabIndex = 1;
             this.label_Password.Text = "Password:";
             // 
+            // label_ServerName
+            // 
+            this.label_ServerName.AutoSize = true;
+            this.label_ServerName.Font = new System.Drawing.Font("Clear Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_ServerName.Location = new System.Drawing.Point(61, 103);
+            this.label_ServerName.Name = "label_ServerName";
+            this.label_ServerName.Size = new System.Drawing.Size(86, 18);
+            this.label_ServerName.TabIndex = 1;
+            this.label_ServerName.Text = "Server name:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -162,35 +192,6 @@ namespace RECIManagementSoftware
             this.label_SignInTitle.Text = "RECI";
             this.label_SignInTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label_ServerName
-            // 
-            this.label_ServerName.AutoSize = true;
-            this.label_ServerName.Font = new System.Drawing.Font("Clear Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_ServerName.Location = new System.Drawing.Point(61, 103);
-            this.label_ServerName.Name = "label_ServerName";
-            this.label_ServerName.Size = new System.Drawing.Size(86, 18);
-            this.label_ServerName.TabIndex = 1;
-            this.label_ServerName.Text = "Server name:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(168, 103);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 24);
-            this.textBox2.TabIndex = 3;
-            // 
-            // checkBox_isRemoteServer
-            // 
-            this.checkBox_isRemoteServer.AutoSize = true;
-            this.checkBox_isRemoteServer.Font = new System.Drawing.Font("Clear Sans Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox_isRemoteServer.Location = new System.Drawing.Point(168, 193);
-            this.checkBox_isRemoteServer.Name = "checkBox_isRemoteServer";
-            this.checkBox_isRemoteServer.Size = new System.Drawing.Size(102, 21);
-            this.checkBox_isRemoteServer.TabIndex = 4;
-            this.checkBox_isRemoteServer.Text = "remote server";
-            this.checkBox_isRemoteServer.UseVisualStyleBackColor = true;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -199,6 +200,7 @@ namespace RECIManagementSoftware
             this.Controls.Add(this.panel_Login);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel_Login.ResumeLayout(false);
             this.panel_Login.PerformLayout();
             this.panel_Bottom.ResumeLayout(false);
@@ -220,7 +222,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.TextBox textBox_Username;
         private System.Windows.Forms.Label label_InocorrectStatus;
         private System.Windows.Forms.Label label_Password;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_ServerName;
         private System.Windows.Forms.Label label_ServerName;
         private System.Windows.Forms.CheckBox checkBox_isRemoteServer;
     }
