@@ -30,8 +30,9 @@ namespace RECIManagementSoftware
         private void InitializeComponent()
         {
             this.panel_Login = new System.Windows.Forms.Panel();
+            this.checkBox_ShowPassword = new System.Windows.Forms.CheckBox();
             this.checkBox_isRemoteServer = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_Password = new System.Windows.Forms.TextBox();
             this.textBox_ServerName = new System.Windows.Forms.TextBox();
             this.textBox_Username = new System.Windows.Forms.TextBox();
             this.panel_Bottom = new System.Windows.Forms.Panel();
@@ -50,8 +51,9 @@ namespace RECIManagementSoftware
             // panel_Login
             // 
             this.panel_Login.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel_Login.Controls.Add(this.checkBox_ShowPassword);
             this.panel_Login.Controls.Add(this.checkBox_isRemoteServer);
-            this.panel_Login.Controls.Add(this.textBox1);
+            this.panel_Login.Controls.Add(this.textBox_Password);
             this.panel_Login.Controls.Add(this.textBox_ServerName);
             this.panel_Login.Controls.Add(this.textBox_Username);
             this.panel_Login.Controls.Add(this.panel_Bottom);
@@ -66,11 +68,24 @@ namespace RECIManagementSoftware
             this.panel_Login.Size = new System.Drawing.Size(375, 316);
             this.panel_Login.TabIndex = 0;
             // 
+            // checkBox_ShowPassword
+            // 
+            this.checkBox_ShowPassword.AutoSize = true;
+            this.checkBox_ShowPassword.Font = new System.Drawing.Font("Clear Sans Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox_ShowPassword.Location = new System.Drawing.Point(61, 193);
+            this.checkBox_ShowPassword.Name = "checkBox_ShowPassword";
+            this.checkBox_ShowPassword.Size = new System.Drawing.Size(110, 21);
+            this.checkBox_ShowPassword.TabIndex = 4;
+            this.checkBox_ShowPassword.Text = "show password";
+            this.checkBox_ShowPassword.UseVisualStyleBackColor = true;
+            this.checkBox_ShowPassword.CheckedChanged += new System.EventHandler(this.checkBox_ShowPassword_CheckedChanged);
+            this.checkBox_ShowPassword.Click += new System.EventHandler(this.checkBox_isRemoteServer_Click);
+            // 
             // checkBox_isRemoteServer
             // 
             this.checkBox_isRemoteServer.AutoSize = true;
             this.checkBox_isRemoteServer.Font = new System.Drawing.Font("Clear Sans Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox_isRemoteServer.Location = new System.Drawing.Point(168, 193);
+            this.checkBox_isRemoteServer.Location = new System.Drawing.Point(217, 193);
             this.checkBox_isRemoteServer.Name = "checkBox_isRemoteServer";
             this.checkBox_isRemoteServer.Size = new System.Drawing.Size(102, 21);
             this.checkBox_isRemoteServer.TabIndex = 4;
@@ -78,14 +93,13 @@ namespace RECIManagementSoftware
             this.checkBox_isRemoteServer.UseVisualStyleBackColor = true;
             this.checkBox_isRemoteServer.Click += new System.EventHandler(this.checkBox_isRemoteServer_Click);
             // 
-            // textBox1
+            // textBox_Password
             // 
-            this.textBox1.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(168, 163);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(151, 24);
-            this.textBox1.TabIndex = 3;
+            this.textBox_Password.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox_Password.Location = new System.Drawing.Point(168, 163);
+            this.textBox_Password.Name = "textBox_Password";
+            this.textBox_Password.Size = new System.Drawing.Size(151, 24);
+            this.textBox_Password.TabIndex = 3;
             // 
             // textBox_ServerName
             // 
@@ -218,12 +232,13 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.Panel panel_Bottom;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Login;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_Password;
         private System.Windows.Forms.TextBox textBox_Username;
         private System.Windows.Forms.Label label_InocorrectStatus;
         private System.Windows.Forms.Label label_Password;
         private System.Windows.Forms.TextBox textBox_ServerName;
         private System.Windows.Forms.Label label_ServerName;
         private System.Windows.Forms.CheckBox checkBox_isRemoteServer;
+        private System.Windows.Forms.CheckBox checkBox_ShowPassword;
     }
 }

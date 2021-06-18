@@ -23,13 +23,13 @@ namespace RECIManagementSoftware
             label_InocorrectStatus.Hide();
 
             _lockedBy = checkBox_isRemoteServer.Checked;
-            
+      
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-            if (!_lockedBy)
-                textBox_ServerName.Enabled = false;
+            textBox_ServerName.Enabled = false;
+            textBox_Password.UseSystemPasswordChar = true;
 
         }
 
@@ -44,5 +44,12 @@ namespace RECIManagementSoftware
 
         }
 
+        private void checkBox_ShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_ShowPassword.Checked)
+                textBox_Password.UseSystemPasswordChar = false;
+            else
+                textBox_Password.UseSystemPasswordChar = true;
+        }
     }
 }
