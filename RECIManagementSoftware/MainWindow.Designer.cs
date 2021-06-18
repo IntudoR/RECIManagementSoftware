@@ -29,16 +29,21 @@ namespace RECIManagementSoftware
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panel_Upper = new System.Windows.Forms.Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsButton_Logout = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.lable_MainWindow = new System.Windows.Forms.Label();
             this.panel_Middle = new System.Windows.Forms.Panel();
+            this.panel_ObjectView = new System.Windows.Forms.Panel();
+            this.panel_ObjectControl = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusStrip_ConnectionLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip_isConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.panel_ObjectControl = new System.Windows.Forms.Panel();
-            this.panel_ObjectView = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.panel_Upper.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.panel_Middle.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +58,41 @@ namespace RECIManagementSoftware
             this.panel_Upper.Name = "panel_Upper";
             this.panel_Upper.Size = new System.Drawing.Size(959, 94);
             this.panel_Upper.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsButton_Logout,
+            this.toolStripSeparator1,
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 69);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(959, 25);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsButton_Logout
+            // 
+            this.tsButton_Logout.Image = ((System.Drawing.Image)(resources.GetObject("tsButton_Logout.Image")));
+            this.tsButton_Logout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsButton_Logout.Name = "tsButton_Logout";
+            this.tsButton_Logout.Size = new System.Drawing.Size(65, 22);
+            this.tsButton_Logout.Text = "Logout";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Open";
             // 
             // lable_MainWindow
             // 
@@ -76,6 +116,22 @@ namespace RECIManagementSoftware
             this.panel_Middle.Name = "panel_Middle";
             this.panel_Middle.Size = new System.Drawing.Size(959, 446);
             this.panel_Middle.TabIndex = 1;
+            // 
+            // panel_ObjectView
+            // 
+            this.panel_ObjectView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_ObjectView.Location = new System.Drawing.Point(200, 0);
+            this.panel_ObjectView.Name = "panel_ObjectView";
+            this.panel_ObjectView.Size = new System.Drawing.Size(759, 424);
+            this.panel_ObjectView.TabIndex = 2;
+            // 
+            // panel_ObjectControl
+            // 
+            this.panel_ObjectControl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_ObjectControl.Location = new System.Drawing.Point(0, 0);
+            this.panel_ObjectControl.Name = "panel_ObjectControl";
+            this.panel_ObjectControl.Size = new System.Drawing.Size(200, 424);
+            this.panel_ObjectControl.TabIndex = 1;
             // 
             // statusStrip1
             // 
@@ -101,31 +157,6 @@ namespace RECIManagementSoftware
             this.statusStrip_isConnectionStatus.Size = new System.Drawing.Size(57, 17);
             this.statusStrip_isConnectionStatus.Text = "unknown";
             // 
-            // panel_ObjectControl
-            // 
-            this.panel_ObjectControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_ObjectControl.Location = new System.Drawing.Point(0, 0);
-            this.panel_ObjectControl.Name = "panel_ObjectControl";
-            this.panel_ObjectControl.Size = new System.Drawing.Size(200, 424);
-            this.panel_ObjectControl.TabIndex = 1;
-            // 
-            // panel_ObjectView
-            // 
-            this.panel_ObjectView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_ObjectView.Location = new System.Drawing.Point(200, 0);
-            this.panel_ObjectView.Name = "panel_ObjectView";
-            this.panel_ObjectView.Size = new System.Drawing.Size(759, 424);
-            this.panel_ObjectView.TabIndex = 2;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 69);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(959, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -137,6 +168,8 @@ namespace RECIManagementSoftware
             this.Text = "RECI";
             this.panel_Upper.ResumeLayout(false);
             this.panel_Upper.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.panel_Middle.ResumeLayout(false);
             this.panel_Middle.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -157,6 +190,9 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.Panel panel_ObjectView;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusStrip_isConnectionStatus;
+        private System.Windows.Forms.ToolStripButton tsButton_Logout;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 
