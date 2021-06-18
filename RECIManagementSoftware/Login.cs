@@ -59,47 +59,62 @@ namespace RECIManagementSoftware
 
         private void button_Login_Click(object sender, EventArgs e)
         {
+
+            if (_lockedBy == true)
+            {
+                _connectionString = String.Format
+                    (
+                        "Server={0}\\{1}; Database=reci; Integrated Security=True; Connect Timeout=30", _computerName, textBox_ServerName.Text
+                    );
+            }
+            else
+            {
+                _dbPath = Path.Combine(_mainDomain, _dbName);
+                _connectionString = String.Format
+                    (
+                        "Data Source=(LocalDB)\v11.0; AttachDBFilename = {0}; Integrated Security=True; Connect Timeout=30", _dbPath
+                    );
+            }
+
+            Connection.ConnectionString = _connectionString;
+            Connection.Open();
+
+            SqlCommand command = new();
+            command.Connection = Connection;
+            command.CommandText = String.Format("SELECT [Username], [Password] FROM [reci].[account] WHERE [Username] = '{0}' AND [Password] = '{1}'"
+                    , textBox_Username.Text, textBox_Password.Text);
+
+            DataTable data = new();
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(data);
+
             try
             {
-                if (_lockedBy == true)
+                if (data.Rows[0][0].ToString() == textBox_Username.Text)
                 {
-                    _connectionString = String.Format("Server={0}\\{1}; Database=reci; Integrated Security=True; Connect Timeout=30", _computerName, textBox_ServerName.Text);
-                }
-                else
-                {
-                    _dbPath = Path.Combine(_mainDomain, _dbName);
-                    _connectionString = String.Format("Data Source=(LocalDB)\v11.0; AttachDBFilename = {0}; Integrated Security=True; Connect Timeout=30", _dbPath);
-                }
+                    MainWindow mainWindow = new();
+                    mainWindow.Show();
 
-                Connection.ConnectionString = _connectionString;
-                Connection.Open();
-
-                if (Connection != null)
-                {
-                    MessageBox.Show("Connection to instance succeeded");
-                    SqlDataAdapter adapter = new SqlDataAdapter(String.Format("SELECT * FROM [reci].[account] WHERE [Username] = '{0}' AND [Password] = '{1}'"
-                        , textBox_Username.Text, textBox_Password.Text), Connection);
-                    DataTable data = new();
-                    adapter.Fill(data);
-
-                    if (data.Rows[0][0].ToString() == "1")
-                    {
-                        MainWindow mainWindow = new();
-                        mainWindow.Show();
-
-                        Hide();
-                    }
+                    this.Hide();
                 }
                 else
                 {
                     label_InocorrectStatus.Show();
                 }
             }
-            catch
+            catch(Exception ex)
             {
-
+                label_InocorrectStatus.Show();
+                MessageBox.Show(String.Format("Error: {0}", ex.Message), "Exception error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-        }
+            finally
+            {
+                Connection.Close();
+            }
+
+            Connection.Close();
+
+        }  
     }
 }
