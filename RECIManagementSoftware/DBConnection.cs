@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -16,17 +13,38 @@ namespace RECI_APP
         SqlConnection Connection = new(@"Data Source =" + srv + "; Initial Catalog =" + ctlg + "; Integrated Security = false; User ID =" + usr + "; Password =" + pswd );
         SqlConnection Connection = new(@"Data Source = DESKTOP-PP6SC19\MSS2012; Initial Catalog =" + ctlg + "; Integrated Security = false; User ID =" + usr + "; Password =" + pswd);
         */
+        private string _dbName = "reci.mdf";
+        private string _mainDomain = AppDomain.CurrentDomain.BaseDirectory;
+        private string _dbPath;
+        private string _remoteConnectionString;
 
-        SqlConnection connection = new();
+        SqlConnection Connection = new();
 
-        public void OpenConneciton()
+
+        public void OpenConneciton(bool isLocalDB)
         {
-            connection.Open();
+            switch (isLocalDB)
+            {
+                case false:
+                    MessageBox.Show("There is only way through local db just yet.", "Information", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                default:
+                    _dbPath = Path.Combine(_mainDomain, _dbName);
+                    Connection.Open();
+                    break;
+            }
+            
+        }
+
+        public string GetConnection()
+        {
+            return Convert.ToString(Connection);
         }
 
         public void CloseConneciton()
         {
-            connection.Close();
+            Connection.Close();
         }
 
     }

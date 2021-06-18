@@ -139,6 +139,7 @@ namespace RECIManagementSoftware
             this.button_Login.Text = "Login";
             this.button_Login.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_Login.UseVisualStyleBackColor = false;
+            this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
             // 
             // label_InocorrectStatus
             // 
