@@ -69,11 +69,6 @@ namespace RECIManagementSoftware
                 textBox_Password.UseSystemPasswordChar = true;
         }
 
-        public string GetConnectionString()
-        {
-            return _connectionString;
-        }
-
         #endregion
 
         #region Initialize mainwindow form
