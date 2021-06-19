@@ -33,7 +33,7 @@ namespace RECIManagementSoftware
             this.labelAccount = new System.Windows.Forms.Label();
             this.panelAccountControl = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.AccountGridView = new System.Windows.Forms.DataGridView();
             this.panelAccountControls = new System.Windows.Forms.Panel();
             this.buttonAccountDelete = new System.Windows.Forms.Button();
             this.buttonAccountEdit = new System.Windows.Forms.Button();
@@ -41,11 +41,11 @@ namespace RECIManagementSoftware
             this.labelAccountStatus = new System.Windows.Forms.Label();
             this.labelAccountPassword = new System.Windows.Forms.Label();
             this.labelAccountEmail = new System.Windows.Forms.Label();
-            this.labelMobile = new System.Windows.Forms.Label();
+            this.labelAccountMobile = new System.Windows.Forms.Label();
             this.labelAccountBalance = new System.Windows.Forms.Label();
             this.labelRegisterTime = new System.Windows.Forms.Label();
             this.labelAccountUsername = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxAccountStatus = new System.Windows.Forms.TextBox();
             this.textBoxAccountPassword = new System.Windows.Forms.TextBox();
             this.textBoxAccountEmail = new System.Windows.Forms.TextBox();
             this.textBoxAccountMobile = new System.Windows.Forms.TextBox();
@@ -56,7 +56,7 @@ namespace RECIManagementSoftware
             this.panel1.SuspendLayout();
             this.panelAccountControl.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountGridView)).BeginInit();
             this.panelAccountControls.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,23 +95,23 @@ namespace RECIManagementSoftware
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.AccountGridView);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(327, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(692, 537);
             this.panel3.TabIndex = 2;
             // 
-            // dataGridView1
+            // AccountGridView
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(692, 537);
-            this.dataGridView1.TabIndex = 0;
+            this.AccountGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            this.AccountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AccountGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AccountGridView.Location = new System.Drawing.Point(0, 0);
+            this.AccountGridView.Name = "AccountGridView";
+            this.AccountGridView.RowTemplate.Height = 25;
+            this.AccountGridView.Size = new System.Drawing.Size(692, 537);
+            this.AccountGridView.TabIndex = 0;
             // 
             // panelAccountControls
             // 
@@ -121,11 +121,11 @@ namespace RECIManagementSoftware
             this.panelAccountControls.Controls.Add(this.labelAccountStatus);
             this.panelAccountControls.Controls.Add(this.labelAccountPassword);
             this.panelAccountControls.Controls.Add(this.labelAccountEmail);
-            this.panelAccountControls.Controls.Add(this.labelMobile);
+            this.panelAccountControls.Controls.Add(this.labelAccountMobile);
             this.panelAccountControls.Controls.Add(this.labelAccountBalance);
             this.panelAccountControls.Controls.Add(this.labelRegisterTime);
             this.panelAccountControls.Controls.Add(this.labelAccountUsername);
-            this.panelAccountControls.Controls.Add(this.textBox1);
+            this.panelAccountControls.Controls.Add(this.textBoxAccountStatus);
             this.panelAccountControls.Controls.Add(this.textBoxAccountPassword);
             this.panelAccountControls.Controls.Add(this.textBoxAccountEmail);
             this.panelAccountControls.Controls.Add(this.textBoxAccountMobile);
@@ -176,6 +176,7 @@ namespace RECIManagementSoftware
             this.buttonAccountAdd.TabIndex = 2;
             this.buttonAccountAdd.Text = "Add";
             this.buttonAccountAdd.UseVisualStyleBackColor = false;
+            this.buttonAccountAdd.Click += new System.EventHandler(this.buttonAccountAdd_Click);
             // 
             // labelAccountStatus
             // 
@@ -207,15 +208,15 @@ namespace RECIManagementSoftware
             this.labelAccountEmail.TabIndex = 1;
             this.labelAccountEmail.Text = "Email:";
             // 
-            // labelMobile
+            // labelAccountMobile
             // 
-            this.labelMobile.AutoSize = true;
-            this.labelMobile.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelMobile.Location = new System.Drawing.Point(12, 212);
-            this.labelMobile.Name = "labelMobile";
-            this.labelMobile.Size = new System.Drawing.Size(64, 22);
-            this.labelMobile.TabIndex = 1;
-            this.labelMobile.Text = "Mobile:";
+            this.labelAccountMobile.AutoSize = true;
+            this.labelAccountMobile.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelAccountMobile.Location = new System.Drawing.Point(12, 212);
+            this.labelAccountMobile.Name = "labelAccountMobile";
+            this.labelAccountMobile.Size = new System.Drawing.Size(64, 22);
+            this.labelAccountMobile.TabIndex = 1;
+            this.labelAccountMobile.Text = "Mobile:";
             // 
             // labelAccountBalance
             // 
@@ -247,13 +248,13 @@ namespace RECIManagementSoftware
             this.labelAccountUsername.TabIndex = 1;
             this.labelAccountUsername.Text = "Username:";
             // 
-            // textBox1
+            // textBoxAccountStatus
             // 
-            this.textBox1.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(134, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 29);
-            this.textBox1.TabIndex = 0;
+            this.textBoxAccountStatus.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxAccountStatus.Location = new System.Drawing.Point(134, 107);
+            this.textBoxAccountStatus.Name = "textBoxAccountStatus";
+            this.textBoxAccountStatus.Size = new System.Drawing.Size(187, 29);
+            this.textBoxAccountStatus.TabIndex = 0;
             // 
             // textBoxAccountPassword
             // 
@@ -322,11 +323,12 @@ namespace RECIManagementSoftware
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAccount";
             this.Text = "FormAccount";
+            this.Load += new System.EventHandler(this.FormAccount_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelAccountControl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountGridView)).EndInit();
             this.panelAccountControls.ResumeLayout(false);
             this.panelAccountControls.PerformLayout();
             this.ResumeLayout(false);
@@ -339,7 +341,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.Label labelAccount;
         private System.Windows.Forms.Panel panelAccountControl;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView AccountGridView;
         private System.Windows.Forms.Panel panelAccountControls;
         private System.Windows.Forms.TextBox textBoxAccountUsername;
         private System.Windows.Forms.Panel panel2;
@@ -348,7 +350,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.Label labelAccountPassword;
         private System.Windows.Forms.TextBox textBoxAccountPassword;
         private System.Windows.Forms.Label labelAccountStatus;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxAccountStatus;
         private System.Windows.Forms.Label labelRegisterTime;
         private System.Windows.Forms.TextBox textBoxAccountRegisterTime;
         private System.Windows.Forms.Label labelAccountBalance;
@@ -360,5 +362,6 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.Button buttonAccountEdit;
         private System.Windows.Forms.Button buttonAccountAdd;
         private System.Windows.Forms.Button buttonAccountDelete;
+        private System.Windows.Forms.Label labelAccountMobile;
     }
 }
