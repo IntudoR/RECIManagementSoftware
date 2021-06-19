@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -7,6 +8,9 @@ namespace RECIManagementSoftware
 {
     public partial class MainWindow : Form
     {
+        private static string _dbName = "reci.mdf";
+        private static string _mainDomain = AppDomain.CurrentDomain.BaseDirectory;
+        private static string _computerName = System.Environment.MachineName;
         public MainWindow()
         {
             // FORM MANIPULATION
@@ -18,15 +22,36 @@ namespace RECIManagementSoftware
             tsButton_Show.Click += new EventHandler(ShowForm);
         }
 
+        private string _connectionString;
+
         SqlConnection Connection;
 
-        public string Receive(string msg)
+        private void MainWindow_Load(object sender, EventArgs e)
         {
-            return msg;
+            Login login = new();
+            string connectionString = String.Format
+                    (
+                        "Server={0}\\{1};" +
+                        "Database=reci;" +
+                        "Integrated Security=True;" +
+                        "Connect Timeout=30", _computerName, login.textBox_ServerName.Text
+                    );
+
+            Connection = new();
+            Connection.ConnectionString = connectionString;
+
+            Connection.Open();
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+                MessageBox.Show("Connected");
+                //toolStrip_isConnectionStatus.Text = "Connected";
+                //toolStrip_isConnectionStatus.ForeColor = System.Drawing.Color.Green;
+            }
+            
+
+            Connection.Close();
+
         }
-
-        public Action<string> OnMessageAlert { get; set; }
-
 
         private void Logout(object sender, EventArgs e)
         {

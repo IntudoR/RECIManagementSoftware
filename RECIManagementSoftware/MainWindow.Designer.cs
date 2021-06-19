@@ -168,6 +168,7 @@ namespace RECIManagementSoftware
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.Text = "RECI Management Software";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel_Upper.ResumeLayout(false);
             this.panel_Upper.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

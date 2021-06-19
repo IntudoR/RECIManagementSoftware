@@ -36,6 +36,10 @@ namespace RECIManagementSoftware
             textBox_ServerName.Text = _serverName;
             textBox_Username.Text = _usrName;
             textBox_Password.Text = _password;
+
+            // While there is no solution how to send connection string to main form
+            checkBox_isRemoteServer.Enabled = false;
+            textBox_ServerName.Enabled = _remoteServer;
         }
 
         SqlConnection Connection;
@@ -46,7 +50,6 @@ namespace RECIManagementSoftware
 
         private void Login_Load(object sender, EventArgs e)
         {
-            textBox_ServerName.Enabled = false;
             textBox_Password.UseSystemPasswordChar = true;
 
         }
@@ -167,7 +170,7 @@ namespace RECIManagementSoftware
                     OpenMainForm();
                     Hide();
 
-                    Communication comms = new();
+                    MessageHandler comms = new();
                     comms.SetMessage(_connectionString);
                 }
                 else

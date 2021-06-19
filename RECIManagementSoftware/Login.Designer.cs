@@ -246,7 +246,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.TextBox textBox_Username;
         private System.Windows.Forms.Label label_InocorrectStatus;
         private System.Windows.Forms.Label label_Password;
-        private System.Windows.Forms.TextBox textBox_ServerName;
+        public System.Windows.Forms.TextBox textBox_ServerName;
         private System.Windows.Forms.Label label_ServerName;
         private System.Windows.Forms.CheckBox checkBox_isRemoteServer;
         private System.Windows.Forms.CheckBox checkBox_ShowPassword;
