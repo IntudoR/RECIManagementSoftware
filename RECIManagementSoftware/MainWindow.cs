@@ -7,14 +7,10 @@ namespace RECIManagementSoftware
 {
     public partial class MainWindow : Form
     {
-        delegate string Recieve();
-
-        private static string _connectionString;
-
         public MainWindow()
         {
+            // FORM MANIPULATION
             InitializeComponent();
-
             CenterToScreen();
 
             // COMPONENTS OUTSIDE INTITIALIZECOPMONENT METHOD

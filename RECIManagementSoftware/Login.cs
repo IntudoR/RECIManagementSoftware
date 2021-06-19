@@ -150,14 +150,14 @@ namespace RECIManagementSoftware
             command.CommandText = String.Format
                 (
                     "SELECT [Username], [Password] FROM [reci].[account] " +
-                    "WHERE [Username] = '{0}' AND [Password] = '{1}'", 
+                    "WHERE [Username] = '{0}' AND [Password] = '{1}'",
                     textBox_Username.Text, textBox_Password.Text
                     );
 
             DataTable data = new();
 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-            
+
             try
             {
                 adapter.Fill(data);
@@ -166,13 +166,16 @@ namespace RECIManagementSoftware
                 {
                     OpenMainForm();
                     Hide();
+
+                    Communication comms = new();
+                    comms.SetMessage(_connectionString);
                 }
                 else
                 {
                     label_InocorrectStatus.Show();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 label_InocorrectStatus.Show();
             }
