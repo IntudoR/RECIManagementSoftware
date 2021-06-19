@@ -8,8 +8,8 @@ namespace RECIManagementSoftware
 {
     public partial class MainWindow : Form
     {
-        private static string _dbName = "reci.mdf";
-        private static string _mainDomain = AppDomain.CurrentDomain.BaseDirectory;
+        //private static string _dbName = "reci.mdf";
+        //private static string _mainDomain = AppDomain.CurrentDomain.BaseDirectory;
         private static string _computerName = System.Environment.MachineName;
         public MainWindow()
         {
@@ -29,7 +29,7 @@ namespace RECIManagementSoftware
         private void MainWindow_Load(object sender, EventArgs e)
         {
             Login login = new();
-            string connectionString = String.Format
+            _connectionString = String.Format
                     (
                         "Server={0}\\{1};" +
                         "Database=reci;" +
@@ -38,18 +38,21 @@ namespace RECIManagementSoftware
                     );
 
             Connection = new();
-            Connection.ConnectionString = connectionString;
+            Connection.ConnectionString = _connectionString;
 
-            Connection.Open();
-            if (Connection.State == System.Data.ConnectionState.Open)
+            try
             {
-                MessageBox.Show("Connected");
-                //toolStrip_isConnectionStatus.Text = "Connected";
-                //toolStrip_isConnectionStatus.ForeColor = System.Drawing.Color.Green;
+                Connection.Open(); 
             }
-            
-
-            Connection.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(String.Format("Exception error:{0}", ex.Message), "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Connection.Close();
+            }
 
         }
 
