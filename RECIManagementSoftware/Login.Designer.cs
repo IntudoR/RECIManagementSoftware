@@ -29,6 +29,7 @@ namespace RECIManagementSoftware
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel_Login = new System.Windows.Forms.Panel();
             this.checkBox_ShowPassword = new System.Windows.Forms.CheckBox();
             this.checkBox_isRemoteServer = new System.Windows.Forms.CheckBox();
@@ -43,6 +44,7 @@ namespace RECIManagementSoftware
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Upper = new System.Windows.Forms.Panel();
             this.label_SignInTitle = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel_Login.SuspendLayout();
             this.panel_Bottom.SuspendLayout();
             this.panel_Upper.SuspendLayout();
@@ -207,6 +209,11 @@ namespace RECIManagementSoftware
             this.label_SignInTitle.Text = "RECI";
             this.label_SignInTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -241,5 +248,6 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.Label label_ServerName;
         private System.Windows.Forms.CheckBox checkBox_isRemoteServer;
         private System.Windows.Forms.CheckBox checkBox_ShowPassword;
+        private System.Windows.Forms.Timer timer1;
     }
 }

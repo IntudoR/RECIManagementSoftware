@@ -34,7 +34,7 @@ namespace RECIManagementSoftware
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsButton_Logout = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tsButton_Show = new System.Windows.Forms.ToolStripButton();
             this.lable_MainWindow = new System.Windows.Forms.Label();
             this.panel_Middle = new System.Windows.Forms.Panel();
             this.panel_ObjectView = new System.Windows.Forms.Panel();
@@ -62,10 +62,11 @@ namespace RECIManagementSoftware
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsButton_Logout,
             this.toolStripSeparator1,
-            this.toolStripButton1});
+            this.tsButton_Show});
             this.toolStrip1.Location = new System.Drawing.Point(0, 69);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(959, 25);
@@ -77,7 +78,7 @@ namespace RECIManagementSoftware
             this.tsButton_Logout.Image = ((System.Drawing.Image)(resources.GetObject("tsButton_Logout.Image")));
             this.tsButton_Logout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsButton_Logout.Name = "tsButton_Logout";
-            this.tsButton_Logout.Size = new System.Drawing.Size(65, 22);
+            this.tsButton_Logout.Size = new System.Drawing.Size(66, 22);
             this.tsButton_Logout.Text = "Logout";
             // 
             // toolStripSeparator1
@@ -85,14 +86,13 @@ namespace RECIManagementSoftware
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton1
+            // tsButton_Show
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Open";
+            this.tsButton_Show.Image = ((System.Drawing.Image)(resources.GetObject("tsButton_Show.Image")));
+            this.tsButton_Show.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsButton_Show.Name = "tsButton_Show";
+            this.tsButton_Show.Size = new System.Drawing.Size(58, 22);
+            this.tsButton_Show.Text = "Show";
             // 
             // lable_MainWindow
             // 
@@ -135,6 +135,7 @@ namespace RECIManagementSoftware
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusStrip_ConnectionLable,
             this.statusStrip_isConnectionStatus});
@@ -147,14 +148,14 @@ namespace RECIManagementSoftware
             // statusStrip_ConnectionLable
             // 
             this.statusStrip_ConnectionLable.Name = "statusStrip_ConnectionLable";
-            this.statusStrip_ConnectionLable.Size = new System.Drawing.Size(107, 17);
+            this.statusStrip_ConnectionLable.Size = new System.Drawing.Size(110, 17);
             this.statusStrip_ConnectionLable.Text = "Connection Status:";
             // 
             // statusStrip_isConnectionStatus
             // 
             this.statusStrip_isConnectionStatus.ForeColor = System.Drawing.Color.DarkOrange;
             this.statusStrip_isConnectionStatus.Name = "statusStrip_isConnectionStatus";
-            this.statusStrip_isConnectionStatus.Size = new System.Drawing.Size(57, 17);
+            this.statusStrip_isConnectionStatus.Size = new System.Drawing.Size(58, 17);
             this.statusStrip_isConnectionStatus.Text = "unknown";
             // 
             // MainWindow
@@ -164,8 +165,9 @@ namespace RECIManagementSoftware
             this.ClientSize = new System.Drawing.Size(959, 540);
             this.Controls.Add(this.panel_Middle);
             this.Controls.Add(this.panel_Upper);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
-            this.Text = "RECI";
+            this.Text = "RECI Management Software";
             this.panel_Upper.ResumeLayout(false);
             this.panel_Upper.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -192,7 +194,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.ToolStripStatusLabel statusStrip_isConnectionStatus;
         private System.Windows.Forms.ToolStripButton tsButton_Logout;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tsButton_Show;
     }
 }
 
