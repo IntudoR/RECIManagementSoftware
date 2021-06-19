@@ -7,7 +7,10 @@ namespace RECIManagementSoftware
 {
     public partial class MainWindow : Form
     {
+        delegate string Recieve();
+
         private static string _connectionString;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -20,6 +23,14 @@ namespace RECIManagementSoftware
         }
 
         SqlConnection Connection;
+
+        public string Receive(string msg)
+        {
+            return msg;
+        }
+
+        public Action<string> OnMessageAlert { get; set; }
+
 
         private void Logout(object sender, EventArgs e)
         {
