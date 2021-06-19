@@ -83,7 +83,7 @@ namespace RECIManagementSoftware
             this.panel_Upper.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Upper.Location = new System.Drawing.Point(0, 0);
             this.panel_Upper.Name = "panel_Upper";
-            this.panel_Upper.Size = new System.Drawing.Size(959, 94);
+            this.panel_Upper.Size = new System.Drawing.Size(1189, 94);
             this.panel_Upper.TabIndex = 0;
             // 
             // toolStrip1
@@ -96,7 +96,7 @@ namespace RECIManagementSoftware
             this.tsButton_Show});
             this.toolStrip1.Location = new System.Drawing.Point(0, 69);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(959, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1189, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -141,7 +141,7 @@ namespace RECIManagementSoftware
             this.panel_Middle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Middle.Location = new System.Drawing.Point(0, 94);
             this.panel_Middle.Name = "panel_Middle";
-            this.panel_Middle.Size = new System.Drawing.Size(959, 446);
+            this.panel_Middle.Size = new System.Drawing.Size(1189, 613);
             this.panel_Middle.TabIndex = 1;
             // 
             // panel_ObjectView
@@ -149,7 +149,7 @@ namespace RECIManagementSoftware
             this.panel_ObjectView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_ObjectView.Location = new System.Drawing.Point(200, 0);
             this.panel_ObjectView.Name = "panel_ObjectView";
-            this.panel_ObjectView.Size = new System.Drawing.Size(759, 424);
+            this.panel_ObjectView.Size = new System.Drawing.Size(989, 591);
             this.panel_ObjectView.TabIndex = 2;
             // 
             // panel_ObjectControl
@@ -158,7 +158,7 @@ namespace RECIManagementSoftware
             this.panel_ObjectControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_ObjectControl.Location = new System.Drawing.Point(0, 0);
             this.panel_ObjectControl.Name = "panel_ObjectControl";
-            this.panel_ObjectControl.Size = new System.Drawing.Size(200, 424);
+            this.panel_ObjectControl.Size = new System.Drawing.Size(200, 591);
             this.panel_ObjectControl.TabIndex = 1;
             // 
             // treeView1
@@ -208,7 +208,7 @@ namespace RECIManagementSoftware
             treeNode13.Text = "Tables";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode13});
-            this.treeView1.Size = new System.Drawing.Size(200, 424);
+            this.treeView1.Size = new System.Drawing.Size(200, 591);
             this.treeView1.TabIndex = 0;
             // 
             // statusStrip1
@@ -217,9 +217,9 @@ namespace RECIManagementSoftware
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusStrip_ConnectionLable,
             this.statusStrip_isConnectionStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 424);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 591);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(959, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1189, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -242,7 +242,7 @@ namespace RECIManagementSoftware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 540);
+            this.ClientSize = new System.Drawing.Size(1189, 707);
             this.Controls.Add(this.panel_Middle);
             this.Controls.Add(this.panel_Upper);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

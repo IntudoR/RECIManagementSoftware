@@ -64,6 +64,17 @@ namespace RECIManagementSoftware
         private void ShowForm(object sender, EventArgs e)
         {
 
+            switch (treeView1.SelectedNode.Text)
+            {
+                case "Account":
+                    FormAccount formAccount = new();
+                    formAccount.TopLevel = false;
+                    formAccount.Dock = DockStyle.Fill;
+                    formAccount.TopMost = true;
+                    panel_ObjectView.Controls.Add(formAccount);
+                    formAccount.Show();
+                    break;
+            }
         }
 
     }
