@@ -30,6 +30,15 @@ namespace RECIManagementSoftware
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Account");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Client");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Contract");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Counterparty");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Tables", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
             this.panel_Upper = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsButton_Logout = new System.Windows.Forms.ToolStripButton();
@@ -42,9 +51,11 @@ namespace RECIManagementSoftware
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusStrip_ConnectionLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip_isConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel_Upper.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel_Middle.SuspendLayout();
+            this.panel_ObjectControl.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +138,7 @@ namespace RECIManagementSoftware
             // 
             // panel_ObjectControl
             // 
+            this.panel_ObjectControl.Controls.Add(this.treeView1);
             this.panel_ObjectControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_ObjectControl.Location = new System.Drawing.Point(0, 0);
             this.panel_ObjectControl.Name = "panel_ObjectControl";
@@ -150,6 +162,7 @@ namespace RECIManagementSoftware
             this.statusStrip_ConnectionLable.Name = "statusStrip_ConnectionLable";
             this.statusStrip_ConnectionLable.Size = new System.Drawing.Size(110, 17);
             this.statusStrip_ConnectionLable.Text = "Connection Status:";
+            this.statusStrip_ConnectionLable.Visible = false;
             // 
             // statusStrip_isConnectionStatus
             // 
@@ -157,6 +170,33 @@ namespace RECIManagementSoftware
             this.statusStrip_isConnectionStatus.Name = "statusStrip_isConnectionStatus";
             this.statusStrip_isConnectionStatus.Size = new System.Drawing.Size(58, 17);
             this.statusStrip_isConnectionStatus.Text = "unknown";
+            this.statusStrip_isConnectionStatus.Visible = false;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "NodeAccount";
+            treeNode1.NodeFont = new System.Drawing.Font("Clear Sans", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            treeNode1.Text = "Account";
+            treeNode2.Name = "NodeClient";
+            treeNode2.NodeFont = new System.Drawing.Font("Clear Sans", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            treeNode2.Text = "Client";
+            treeNode3.Name = "NodeContract";
+            treeNode3.NodeFont = new System.Drawing.Font("Clear Sans", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            treeNode3.Text = "Contract";
+            treeNode4.Name = "NodeCounterparty";
+            treeNode4.NodeFont = new System.Drawing.Font("Clear Sans", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            treeNode4.Text = "Counterparty";
+            treeNode5.Name = "NodeTables";
+            treeNode5.NodeFont = new System.Drawing.Font("Clear Sans", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            treeNode5.Text = "Tables";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode5});
+            this.treeView1.Size = new System.Drawing.Size(200, 424);
+            this.treeView1.TabIndex = 0;
             // 
             // MainWindow
             // 
@@ -175,6 +215,7 @@ namespace RECIManagementSoftware
             this.toolStrip1.PerformLayout();
             this.panel_Middle.ResumeLayout(false);
             this.panel_Middle.PerformLayout();
+            this.panel_ObjectControl.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -196,6 +237,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.ToolStripButton tsButton_Logout;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsButton_Show;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
 
