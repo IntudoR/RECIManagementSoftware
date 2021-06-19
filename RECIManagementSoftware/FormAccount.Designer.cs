@@ -29,12 +29,16 @@ namespace RECIManagementSoftware
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelAccount = new System.Windows.Forms.Label();
             this.panelAccountControl = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.AccountGridView = new System.Windows.Forms.DataGridView();
             this.panelAccountControls = new System.Windows.Forms.Panel();
+            this.labelAccountOutput = new System.Windows.Forms.Label();
             this.buttonAccountDelete = new System.Windows.Forms.Button();
             this.buttonAccountEdit = new System.Windows.Forms.Button();
             this.buttonAccountAdd = new System.Windows.Forms.Button();
@@ -53,6 +57,7 @@ namespace RECIManagementSoftware
             this.textBoxAccountRegisterTime = new System.Windows.Forms.TextBox();
             this.textBoxAccountUsername = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panelAccountControl.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -104,7 +109,18 @@ namespace RECIManagementSoftware
             // 
             // AccountGridView
             // 
-            this.AccountGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AccountGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.AccountGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.AccountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AccountGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AccountGridView.Location = new System.Drawing.Point(0, 0);
@@ -112,9 +128,12 @@ namespace RECIManagementSoftware
             this.AccountGridView.RowTemplate.Height = 25;
             this.AccountGridView.Size = new System.Drawing.Size(692, 537);
             this.AccountGridView.TabIndex = 0;
+            this.AccountGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountGridView_CellContentClick);
             // 
             // panelAccountControls
             // 
+            this.panelAccountControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            this.panelAccountControls.Controls.Add(this.labelAccountOutput);
             this.panelAccountControls.Controls.Add(this.buttonAccountDelete);
             this.panelAccountControls.Controls.Add(this.buttonAccountEdit);
             this.panelAccountControls.Controls.Add(this.buttonAccountAdd);
@@ -138,9 +157,21 @@ namespace RECIManagementSoftware
             this.panelAccountControls.Size = new System.Drawing.Size(327, 537);
             this.panelAccountControls.TabIndex = 1;
             // 
+            // labelAccountOutput
+            // 
+            this.labelAccountOutput.AutoSize = true;
+            this.labelAccountOutput.Font = new System.Drawing.Font("Clear Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelAccountOutput.Location = new System.Drawing.Point(13, 7);
+            this.labelAccountOutput.Name = "labelAccountOutput";
+            this.labelAccountOutput.Size = new System.Drawing.Size(50, 18);
+            this.labelAccountOutput.TabIndex = 3;
+            this.labelAccountOutput.Text = "label1";
+            this.labelAccountOutput.Visible = false;
+            // 
             // buttonAccountDelete
             // 
             this.buttonAccountDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.buttonAccountDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
             this.buttonAccountDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAccountDelete.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonAccountDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
@@ -150,10 +181,12 @@ namespace RECIManagementSoftware
             this.buttonAccountDelete.TabIndex = 2;
             this.buttonAccountDelete.Text = "Delete";
             this.buttonAccountDelete.UseVisualStyleBackColor = false;
+            this.buttonAccountDelete.Click += new System.EventHandler(this.buttonAccountDelete_Click);
             // 
             // buttonAccountEdit
             // 
             this.buttonAccountEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.buttonAccountEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
             this.buttonAccountEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAccountEdit.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonAccountEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
@@ -163,10 +196,12 @@ namespace RECIManagementSoftware
             this.buttonAccountEdit.TabIndex = 2;
             this.buttonAccountEdit.Text = "Edit";
             this.buttonAccountEdit.UseVisualStyleBackColor = false;
+            this.buttonAccountEdit.Click += new System.EventHandler(this.buttonAccountEdit_Click);
             // 
             // buttonAccountAdd
             // 
             this.buttonAccountAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.buttonAccountAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
             this.buttonAccountAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAccountAdd.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonAccountAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
@@ -313,6 +348,12 @@ namespace RECIManagementSoftware
             this.panel2.Size = new System.Drawing.Size(1019, 25);
             this.panel2.TabIndex = 0;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -363,5 +404,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.Button buttonAccountAdd;
         private System.Windows.Forms.Button buttonAccountDelete;
         private System.Windows.Forms.Label labelAccountMobile;
+        private System.Windows.Forms.Label labelAccountOutput;
+        private System.Windows.Forms.Timer timer1;
     }
 }
