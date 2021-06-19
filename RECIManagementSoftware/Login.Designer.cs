@@ -30,6 +30,7 @@ namespace RECIManagementSoftware
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel_Login = new System.Windows.Forms.Panel();
             this.checkBox_ShowPassword = new System.Windows.Forms.CheckBox();
             this.checkBox_isRemoteServer = new System.Windows.Forms.CheckBox();
@@ -220,6 +221,7 @@ namespace RECIManagementSoftware
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 316);
             this.Controls.Add(this.panel_Login);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
