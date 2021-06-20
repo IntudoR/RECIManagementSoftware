@@ -20,11 +20,15 @@ namespace RECIManagementSoftware
             // COMPONENTS OUTSIDE INTITIALIZECOPMONENT METHOD
             tsButton_Logout.Click += new EventHandler(Logout);
             tsButton_Show.Click += new EventHandler(ShowForm);
+            tsButton_Close.Click += new EventHandler(CloseForm);
         }
 
         private string _connectionString;
 
         SqlConnection Connection;
+
+        FormAccount formAccount;
+        FormAssignment formAssignment;
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -63,16 +67,42 @@ namespace RECIManagementSoftware
 
         private void ShowForm(object sender, EventArgs e)
         {
-
             switch (treeView1.SelectedNode.Text)
             {
                 case "Account":
-                    FormAccount formAccount = new();
+                    if (formAccount == null)
+                        formAccount = new();
                     formAccount.TopLevel = false;
                     formAccount.Dock = DockStyle.Fill;
                     formAccount.TopMost = true;
                     panel_ObjectView.Controls.Add(formAccount);
                     formAccount.Show();
+                    break;
+
+                case "Assignment":
+                    if(formAssignment == null)
+                        formAssignment = new();
+                    formAssignment.TopLevel = false;
+                    formAssignment.Dock = DockStyle.Fill;
+                    formAssignment.TopMost = true;
+                    panel_ObjectView.Controls.Add(formAssignment);
+                    formAssignment.Show();
+                    break;
+            }
+        }
+
+        private void CloseForm(object sender, EventArgs e)
+        {
+            switch (treeView1.SelectedNode.Text)
+            {
+                case "Account":
+                    if(formAccount != null)                    
+                        formAccount.Hide();
+                    break;
+
+                case "Assignment":
+                    if (formAssignment != null)
+                        formAssignment.Hide();
                     break;
             }
         }

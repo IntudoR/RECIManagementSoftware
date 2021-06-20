@@ -170,8 +170,6 @@ namespace RECIManagementSoftware
                     OpenMainForm();
                     Hide();
 
-                    MessageHandler comms = new();
-                    comms.SetMessage(_connectionString);
                 }
                 else
                 {

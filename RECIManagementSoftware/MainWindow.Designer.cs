@@ -60,6 +60,7 @@ namespace RECIManagementSoftware
             this.tsButton_Logout = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsButton_Show = new System.Windows.Forms.ToolStripButton();
+            this.tsButton_Close = new System.Windows.Forms.ToolStripButton();
             this.lable_MainWindow = new System.Windows.Forms.Label();
             this.panel_Middle = new System.Windows.Forms.Panel();
             this.panel_ObjectView = new System.Windows.Forms.Panel();
@@ -93,7 +94,8 @@ namespace RECIManagementSoftware
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsButton_Logout,
             this.toolStripSeparator1,
-            this.tsButton_Show});
+            this.tsButton_Show,
+            this.tsButton_Close});
             this.toolStrip1.Location = new System.Drawing.Point(0, 69);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1430, 25);
@@ -120,6 +122,15 @@ namespace RECIManagementSoftware
             this.tsButton_Show.Name = "tsButton_Show";
             this.tsButton_Show.Size = new System.Drawing.Size(58, 22);
             this.tsButton_Show.Text = "Show";
+            // 
+            // tsButton_Close
+            // 
+            this.tsButton_Close.Image = ((System.Drawing.Image)(resources.GetObject("tsButton_Close.Image")));
+            this.tsButton_Close.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsButton_Close.Name = "tsButton_Close";
+            this.tsButton_Close.Size = new System.Drawing.Size(58, 22);
+            this.tsButton_Close.Text = "Close";
+            this.tsButton_Close.ToolTipText = "Close";
             // 
             // lable_MainWindow
             // 
@@ -280,6 +291,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsButton_Show;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ToolStripButton tsButton_Close;
     }
 }
 
