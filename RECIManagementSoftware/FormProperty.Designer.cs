@@ -85,9 +85,9 @@ namespace RECIManagementSoftware
             this.labelClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
             this.labelClient.Location = new System.Drawing.Point(0, 0);
             this.labelClient.Name = "labelClient";
-            this.labelClient.Size = new System.Drawing.Size(287, 50);
+            this.labelClient.Size = new System.Drawing.Size(347, 50);
             this.labelClient.TabIndex = 0;
-            this.labelClient.Text = "Manage Clients";
+            this.labelClient.Text = "Manage Properties";
             // 
             // panelAccountControl
             // 
