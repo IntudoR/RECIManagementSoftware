@@ -64,6 +64,7 @@ namespace RECIManagementSoftware
             this.lable_MainWindow = new System.Windows.Forms.Label();
             this.panel_Middle = new System.Windows.Forms.Panel();
             this.panel_ObjectView = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.panel_ObjectControl = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -72,6 +73,7 @@ namespace RECIManagementSoftware
             this.panel_Upper.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel_Middle.SuspendLayout();
+            this.panel_ObjectView.SuspendLayout();
             this.panel_ObjectControl.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -158,11 +160,22 @@ namespace RECIManagementSoftware
             // panel_ObjectView
             // 
             this.panel_ObjectView.BackColor = System.Drawing.SystemColors.Control;
+            this.panel_ObjectView.Controls.Add(this.tabControl1);
             this.panel_ObjectView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_ObjectView.Location = new System.Drawing.Point(200, 0);
             this.panel_ObjectView.Name = "panel_ObjectView";
             this.panel_ObjectView.Size = new System.Drawing.Size(1230, 743);
             this.panel_ObjectView.TabIndex = 2;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1230, 743);
+            this.tabControl1.TabIndex = 0;
+            this.tabControl1.Visible = false;
             // 
             // panel_ObjectControl
             // 
@@ -268,6 +281,7 @@ namespace RECIManagementSoftware
             this.toolStrip1.PerformLayout();
             this.panel_Middle.ResumeLayout(false);
             this.panel_Middle.PerformLayout();
+            this.panel_ObjectView.ResumeLayout(false);
             this.panel_ObjectControl.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -292,6 +306,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.ToolStripButton tsButton_Show;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ToolStripButton tsButton_Close;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }
 

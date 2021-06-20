@@ -30,6 +30,7 @@ namespace RECIManagementSoftware
         FormAccount formAccount;
         FormAssignment formAssignment;
         FormClient FormClient;
+        FormContract formContract;
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -99,6 +100,16 @@ namespace RECIManagementSoftware
                     panel_ObjectView.Controls.Add(FormClient);
                     FormClient.Show();
                     break;
+
+                case "Contract":
+                    if (formContract == null)
+                        formContract = new();
+                    formContract.TopLevel = false;
+                    formContract.Dock = DockStyle.Fill;
+                    formContract.TopMost = true;
+                    panel_ObjectView.Controls.Add(formContract);
+                    formContract.Show();
+                    break;
             }
         }
 
@@ -107,7 +118,7 @@ namespace RECIManagementSoftware
             switch (treeView1.SelectedNode.Text)
             {
                 case "Account":
-                    if(formAccount != null)                    
+                    if (formAccount != null)
                         formAccount.Hide();
                     break;
 
@@ -119,6 +130,11 @@ namespace RECIManagementSoftware
                 case "Client":
                     if (FormClient != null)
                         FormClient.Hide();
+                    break;
+
+                case "Contract":
+                    if (formContract != null)
+                        formContract.Hide();
                     break;
             }
         }

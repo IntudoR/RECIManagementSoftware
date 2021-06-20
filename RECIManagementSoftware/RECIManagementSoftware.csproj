@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="FormContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormClient.cs">
       <SubType>Form</SubType>
     </Compile>
