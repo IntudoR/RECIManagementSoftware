@@ -31,7 +31,7 @@ namespace RECIManagementSoftware
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Account");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Assignments");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Assignment");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Client");
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Contract");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Counterparty");
@@ -185,7 +185,7 @@ namespace RECIManagementSoftware
             treeNode1.Text = "Account";
             treeNode2.Name = "NodeAssignments";
             treeNode2.NodeFont = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            treeNode2.Text = "Assignments";
+            treeNode2.Text = "Assignment";
             treeNode3.Name = "NodeClient";
             treeNode3.NodeFont = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             treeNode3.Text = "Client";

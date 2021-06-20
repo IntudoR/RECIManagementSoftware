@@ -39,7 +39,7 @@ namespace RECIManagementSoftware
             {
                 connection.Open();
 
-                string queryTableView = "SELECT * FROM [reci].[Account]";
+                string queryTableView = "SELECT * FROM [reci].[Assignment]";
 
                 SqlDataAdapter adapter = new(queryTableView, connection);
                 SqlCommandBuilder builder = new(adapter);
@@ -59,7 +59,7 @@ namespace RECIManagementSoftware
             {
                 connection.Open();
 
-                string queryTableView = "SELECT * FROM [reci].[Account]";
+                string queryTableView = "SELECT * FROM [reci].[Counterparty]";
 
                 SqlDataAdapter adapter = new(queryTableView, connection);
                 SqlCommandBuilder builder = new(adapter);
@@ -80,7 +80,7 @@ namespace RECIManagementSoftware
         {
             try
             {
-                string queryInsert = String.Format("INSERT INTO [reci].[Account] " +
+                string queryInsert = String.Format("INSERT INTO [reci].[Assignment] " +
                     "VALUES('{0}','{1}')",
                     textBoxAssignmentCounterpartyID.Text,
                     textBoxAssignmentDate.Text
@@ -128,7 +128,7 @@ namespace RECIManagementSoftware
             }
             else
             {
-                string queryDelete = String.Format("DELETE FROM [reci].[Account] " +
+                string queryDelete = String.Format("DELETE FROM [reci].[Assignment] " +
                     "WHERE Mobile = '{0}' AND '{1}';", 
                     textBoxAssignmentDate.Text, textBoxAssignmentCounterpartyID);
 
@@ -153,7 +153,7 @@ namespace RECIManagementSoftware
         {
             try
             {
-                string queryUpdate = String.Format("UPDATE [reci].[Account] SET " +
+                string queryUpdate = String.Format("UPDATE [reci].[Assignment] SET " +
                     "idCounterparty='{0}',Date='{1}'" +
                     "WHERE Date='{1}' AND 'idCounterparty={0}",
                     textBoxAssignmentCounterpartyID.Text,
