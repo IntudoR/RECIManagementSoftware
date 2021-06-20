@@ -41,7 +41,7 @@ namespace RECIManagementSoftware
             {
                 connection.Open();
 
-                string queryTableView = "SELECT * FROM [reci].[Client]";
+                string queryTableView = "SELECT * FROM [reci].[Property]";
 
                 SqlDataAdapter adapter = new(queryTableView, connection);
                 SqlCommandBuilder builder = new(adapter);
@@ -62,7 +62,7 @@ namespace RECIManagementSoftware
             {
                 connection.Open();
 
-                string queryTableView = "SELECT * FROM [reci].[Account]";
+                string queryTableView = "SELECT * FROM [reci].[Counterparty]";
 
                 SqlDataAdapter adapter = new(queryTableView, connection);
                 SqlCommandBuilder builder = new(adapter);
