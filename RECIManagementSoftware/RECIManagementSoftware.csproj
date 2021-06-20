@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="FormCounterpartyContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormCounterparty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -24,6 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FormContract - Copy %282%29.resx">
+      <DependentUpon>FormContract.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FormContract - Copy - Copy.resx">
+      <DependentUpon>FormContract - Copy.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Update="FormContract - Copy.resx">
       <DependentUpon>FormContract.resx</DependentUpon>
     </EmbeddedResource>

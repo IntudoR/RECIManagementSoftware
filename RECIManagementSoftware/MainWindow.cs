@@ -32,6 +32,7 @@ namespace RECIManagementSoftware
         FormClient FormClient;
         FormContract formContract;
         FormCounterparty formCounterparty;
+        FormCounterpartyContract formCounterpartyContract;
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -121,6 +122,16 @@ namespace RECIManagementSoftware
                     panel_ObjectView.Controls.Add(formCounterparty);
                     formCounterparty.Show();
                     break;
+
+                case "Counterparty contract":
+                    if (formCounterpartyContract == null)
+                        formCounterpartyContract = new();
+                    formCounterpartyContract.TopLevel = false;
+                    formCounterpartyContract.Dock = DockStyle.Fill;
+                    formCounterpartyContract.TopMost = true;
+                    panel_ObjectView.Controls.Add(formCounterpartyContract);
+                    formCounterpartyContract.Show();
+                    break;
             }
         }
 
@@ -151,6 +162,11 @@ namespace RECIManagementSoftware
                 case "Counterparty":
                     if (formCounterparty != null)
                         formCounterparty.Hide();
+                    break;
+
+                case "Counterparty contract":
+                    if (formCounterpartyContract != null)
+                        formCounterpartyContract.Hide();
                     break;
             }
         }
