@@ -143,6 +143,41 @@ namespace RECIManagementSoftware
             }
         }
 
+        private void AccountGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (ContractGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    string paid;
+
+                    ContractGridView.CurrentRow.Selected = true;
+
+                    textBoxContractEmployeeID.Text = ContractGridView.SelectedRows[0].Cells["idEmployee"].Value.ToString();
+                    textBoxContractRentalID.Text = ContractGridView.SelectedRows[0].Cells["idRental"].Value.ToString();
+                    textBoxContractPayment.Text = ContractGridView.SelectedRows[0].Cells["Payment"].Value.ToString();
+                    paid = ContractGridView.SelectedRows[0].Cells["Paid"].Value.ToString();
+                    textBoxContractDate.Text = ContractGridView.SelectedRows[0].Cells["Date"].Value.ToString();
+                    textBoxContractExpires.Text = ContractGridView.SelectedRows[0].Cells["Expires"].Value.ToString();
+
+                    switch (paid)
+                    {
+                        case "0":
+                            checkBoxContractPaid.Checked = false;
+                            break;
+                        case "1":
+                            checkBoxContractPaid.Checked = true;
+                            break;
+                    }
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Selected upper row!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void buttonAccountAdd_Click(object sender, EventArgs e)
         {
             try
@@ -236,48 +271,6 @@ namespace RECIManagementSoftware
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            labelContractOutput.Visible = false;
-            labelContractOutput.ForeColor = Color.Black;
-            labelContractOutput.Text = String.Empty;
-        }
-
-        private void AccountGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try 
-            {
-                if (ContractGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-                {
-                    string paid;
-
-                    ContractGridView.CurrentRow.Selected = true;
-
-                    textBoxContractEmployeeID.Text = ContractGridView.SelectedRows[0].Cells["idEmployee"].Value.ToString();
-                    textBoxContractRentalID.Text = ContractGridView.SelectedRows[0].Cells["idRental"].Value.ToString();
-                    textBoxContractPayment.Text = ContractGridView.SelectedRows[0].Cells["Payment"].Value.ToString();
-                    paid = ContractGridView.SelectedRows[0].Cells["Paid"].Value.ToString();
-                    textBoxContractDate.Text = ContractGridView.SelectedRows[0].Cells["Date"].Value.ToString();
-                    textBoxContractExpires.Text = ContractGridView.SelectedRows[0].Cells["Expires"].Value.ToString();
-
-                    switch(paid)
-                    {
-                        case "0":
-                            checkBoxContractPaid.Checked = false;
-                            break;
-                        case "1":
-                            checkBoxContractPaid.Checked = true;
-                            break;
-                    }
-                }
-
-            }
-            catch
-            {
-                MessageBox.Show("Selected upper row!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void buttonAccountEdit_Click(object sender, EventArgs e)
         {
             try
@@ -335,6 +328,13 @@ namespace RECIManagementSoftware
                 connection.Close();
             }
             connection.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelContractOutput.Visible = false;
+            labelContractOutput.ForeColor = Color.Black;
+            labelContractOutput.Text = String.Empty;
         }
     }
 }
