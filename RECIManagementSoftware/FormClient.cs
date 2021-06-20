@@ -26,6 +26,7 @@ namespace RECIManagementSoftware
             connection.ConnectionString = _connectionString;
         }
 
+        private string _primaryId;
         private string _connectionString;
         SqlConnection connection = new();
 
@@ -140,7 +141,7 @@ namespace RECIManagementSoftware
             else
             {
                 string queryDelete = String.Format("DELETE FROM [reci].[Client] " +
-                    "WHERE idAccount = '{0}';", textBoxClientAccountID.Text);
+                    "WHERE idClient = '{0}';", _primaryId);
 
                 using (var connection = new SqlConnection(_connectionString))
                 using (var command = new SqlCommand(queryDelete, connection))
@@ -174,6 +175,7 @@ namespace RECIManagementSoftware
                 {
                     ClientGridView.CurrentRow.Selected = true;
 
+                    _primaryId = ClientGridView.SelectedRows[0].Cells[0].Value.ToString();
                     textBoxClientAccountID.Text = ClientGridView.SelectedRows[0].Cells["idAccount"].Value.ToString();
                     textBoxClientFirstName.Text = ClientGridView.SelectedRows[0].Cells["FirstName"].Value.ToString();
                     textBoxClientLastName.Text = ClientGridView.SelectedRows[0].Cells["LastName"].Value.ToString();
@@ -194,12 +196,13 @@ namespace RECIManagementSoftware
                 string queryUpdate = String.Format("UPDATE [reci].[Client] SET " +
                     "idAccount='{0}',FirstName='{1}',LastName='{2}'," +
                     "Gender='{3}',Birthday='{4}' " +
-                    "WHERE idAccount='{0}'",
+                    "WHERE idClient='{5}'",
                     textBoxClientAccountID.Text,
                     textBoxClientFirstName.Text,
                     textBoxClientLastName.Text,
                     textBoxClientGender.Text,
-                    textBoxClientBirthday.Text
+                    textBoxClientBirthday.Text,
+                    _primaryId
                     );
 
                 using (var connection = new SqlConnection(_connectionString))
