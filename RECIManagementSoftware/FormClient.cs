@@ -181,7 +181,7 @@ namespace RECIManagementSoftware
                     textBoxClientBirthday.Text = ClientGridView.SelectedRows[0].Cells["Birthday"].Value.ToString();
                 }
             }
-            catch
+            catch (Exception)
             {
                 MessageBox.Show("Selected upper row!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
