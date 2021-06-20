@@ -39,11 +39,8 @@ namespace RECIManagementSoftware
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelAssignmentsView = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.AssignmentGridView = new System.Windows.Forms.DataGridView();
-            this.panelCounterpartyView = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.CounterpartyGridView = new System.Windows.Forms.DataGridView();
+            this.AssignmentGridView = new System.Windows.Forms.DataGridView();
             this.panelAccountControls = new System.Windows.Forms.Panel();
             this.labelAssignmentOutput = new System.Windows.Forms.Label();
             this.buttonAssignmentDelete = new System.Windows.Forms.Button();
@@ -57,11 +54,8 @@ namespace RECIManagementSoftware
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelAssignmentsView.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AssignmentGridView)).BeginInit();
-            this.panelCounterpartyView.SuspendLayout();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CounterpartyGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AssignmentGridView)).BeginInit();
             this.panelAccountControls.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +93,6 @@ namespace RECIManagementSoftware
             // panel3
             // 
             this.panel3.Controls.Add(this.panelAssignmentsView);
-            this.panel3.Controls.Add(this.panelCounterpartyView);
             this.panel3.Controls.Add(this.panelAccountControls);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 63);
@@ -109,28 +102,20 @@ namespace RECIManagementSoftware
             // 
             // panelAssignmentsView
             // 
-            this.panelAssignmentsView.Controls.Add(this.panel4);
+            this.panelAssignmentsView.Controls.Add(this.CounterpartyGridView);
+            this.panelAssignmentsView.Controls.Add(this.AssignmentGridView);
             this.panelAssignmentsView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAssignmentsView.Location = new System.Drawing.Point(340, 0);
             this.panelAssignmentsView.Name = "panelAssignmentsView";
-            this.panelAssignmentsView.Size = new System.Drawing.Size(613, 305);
+            this.panelAssignmentsView.Size = new System.Drawing.Size(613, 484);
             this.panelAssignmentsView.TabIndex = 4;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.AssignmentGridView);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(613, 305);
-            this.panel4.TabIndex = 3;
-            // 
-            // AssignmentGridView
+            // CounterpartyGridView
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AssignmentGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.AssignmentGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.CounterpartyGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.CounterpartyGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -138,40 +123,21 @@ namespace RECIManagementSoftware
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AssignmentGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.AssignmentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AssignmentGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AssignmentGridView.Location = new System.Drawing.Point(0, 0);
-            this.AssignmentGridView.Name = "AssignmentGridView";
-            this.AssignmentGridView.RowTemplate.Height = 25;
-            this.AssignmentGridView.Size = new System.Drawing.Size(613, 305);
-            this.AssignmentGridView.TabIndex = 0;
-            this.AssignmentGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssignmentGridView_CellContentClick);
+            this.CounterpartyGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.CounterpartyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CounterpartyGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CounterpartyGridView.Location = new System.Drawing.Point(0, 130);
+            this.CounterpartyGridView.Name = "CounterpartyGridView";
+            this.CounterpartyGridView.RowTemplate.Height = 25;
+            this.CounterpartyGridView.Size = new System.Drawing.Size(613, 354);
+            this.CounterpartyGridView.TabIndex = 1;
             // 
-            // panelCounterpartyView
-            // 
-            this.panelCounterpartyView.Controls.Add(this.panel5);
-            this.panelCounterpartyView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelCounterpartyView.Location = new System.Drawing.Point(340, 305);
-            this.panelCounterpartyView.Name = "panelCounterpartyView";
-            this.panelCounterpartyView.Size = new System.Drawing.Size(613, 179);
-            this.panelCounterpartyView.TabIndex = 3;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.CounterpartyGridView);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(613, 179);
-            this.panel5.TabIndex = 3;
-            // 
-            // CounterpartyGridView
+            // AssignmentGridView
             // 
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CounterpartyGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.CounterpartyGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.AssignmentGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.AssignmentGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -179,14 +145,14 @@ namespace RECIManagementSoftware
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CounterpartyGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.CounterpartyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CounterpartyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CounterpartyGridView.Location = new System.Drawing.Point(0, 0);
-            this.CounterpartyGridView.Name = "CounterpartyGridView";
-            this.CounterpartyGridView.RowTemplate.Height = 25;
-            this.CounterpartyGridView.Size = new System.Drawing.Size(613, 179);
-            this.CounterpartyGridView.TabIndex = 0;
+            this.AssignmentGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.AssignmentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AssignmentGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AssignmentGridView.Location = new System.Drawing.Point(0, 0);
+            this.AssignmentGridView.Name = "AssignmentGridView";
+            this.AssignmentGridView.RowTemplate.Height = 25;
+            this.AssignmentGridView.Size = new System.Drawing.Size(613, 484);
+            this.AssignmentGridView.TabIndex = 2;
             // 
             // panelAccountControls
             // 
@@ -319,11 +285,8 @@ namespace RECIManagementSoftware
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panelAssignmentsView.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AssignmentGridView)).EndInit();
-            this.panelCounterpartyView.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CounterpartyGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AssignmentGridView)).EndInit();
             this.panelAccountControls.ResumeLayout(false);
             this.panelAccountControls.PerformLayout();
             this.ResumeLayout(false);
@@ -345,12 +308,9 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.Label labelAssignmentstCounterpartyID;
         private System.Windows.Forms.TextBox textBoxAssignmentDate;
         private System.Windows.Forms.TextBox textBoxAssignmentCounterpartyID;
-        private System.Windows.Forms.Panel panelCounterpartyView;
         private System.Windows.Forms.Panel panelAssignmentsView;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView AssignmentGridView;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView CounterpartyGridView;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridView CounterpartyGridView;
+        private System.Windows.Forms.DataGridView AssignmentGridView;
     }
 }

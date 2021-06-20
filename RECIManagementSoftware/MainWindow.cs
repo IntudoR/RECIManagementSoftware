@@ -29,6 +29,7 @@ namespace RECIManagementSoftware
 
         FormAccount formAccount;
         FormAssignment formAssignment;
+        FormClient FormClient;
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -88,6 +89,16 @@ namespace RECIManagementSoftware
                     panel_ObjectView.Controls.Add(formAssignment);
                     formAssignment.Show();
                     break;
+
+                case "Client":
+                    if (FormClient == null)
+                        FormClient = new();
+                    FormClient.TopLevel = false;
+                    FormClient.Dock = DockStyle.Fill;
+                    FormClient.TopMost = true;
+                    panel_ObjectView.Controls.Add(FormClient);
+                    FormClient.Show();
+                    break;
             }
         }
 
@@ -103,6 +114,11 @@ namespace RECIManagementSoftware
                 case "Assignment":
                     if (formAssignment != null)
                         formAssignment.Hide();
+                    break;
+
+                case "Client":
+                    if (FormClient != null)
+                        FormClient.Hide();
                     break;
             }
         }

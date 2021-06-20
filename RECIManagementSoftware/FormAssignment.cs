@@ -194,12 +194,19 @@ namespace RECIManagementSoftware
 
         private void AssignmentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (AssignmentGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
-                AssignmentGridView.CurrentRow.Selected = true;
+                if (AssignmentGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    AssignmentGridView.CurrentRow.Selected = true;
 
                     textBoxAssignmentCounterpartyID.Text = AssignmentGridView.SelectedRows[0].Cells["idCounterparty"].Value.ToString();
                     textBoxAssignmentDate.Text = AssignmentGridView.SelectedRows[0].Cells["Date"].Value.ToString();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Selected upper row!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
