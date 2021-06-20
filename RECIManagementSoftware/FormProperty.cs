@@ -48,7 +48,7 @@ namespace RECIManagementSoftware
 
                 var dataSet = new DataSet();
                 adapter.Fill(dataSet);
-                ClientGridView.DataSource = dataSet.Tables[0];
+                PropertyGridView.DataSource = dataSet.Tables[0];
 
                 connection.Close();
             }
@@ -69,7 +69,7 @@ namespace RECIManagementSoftware
 
                 var dataSet = new DataSet();
                 adapter.Fill(dataSet);
-                AccountGridView.DataSource = dataSet.Tables[0];
+                CounterpartyGridView.DataSource = dataSet.Tables[0];
 
                 connection.Close();
             }
@@ -171,16 +171,16 @@ namespace RECIManagementSoftware
         {
             try
             {
-                if (ClientGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                if (PropertyGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    ClientGridView.CurrentRow.Selected = true;
+                    PropertyGridView.CurrentRow.Selected = true;
 
-                    _primaryId = ClientGridView.SelectedRows[0].Cells[0].Value.ToString();
-                    textBoxClientAccountID.Text = ClientGridView.SelectedRows[0].Cells["idAccount"].Value.ToString();
-                    textBoxClientFirstName.Text = ClientGridView.SelectedRows[0].Cells["FirstName"].Value.ToString();
-                    textBoxClientLastName.Text = ClientGridView.SelectedRows[0].Cells["LastName"].Value.ToString();
-                    textBoxClientGender.Text = ClientGridView.SelectedRows[0].Cells["Gender"].Value.ToString();
-                    textBoxClientBirthday.Text = ClientGridView.SelectedRows[0].Cells["Birthday"].Value.ToString();
+                    _primaryId = PropertyGridView.SelectedRows[0].Cells[0].Value.ToString();
+                    textBoxClientAccountID.Text = PropertyGridView.SelectedRows[0].Cells["idAccount"].Value.ToString();
+                    textBoxClientFirstName.Text = PropertyGridView.SelectedRows[0].Cells["FirstName"].Value.ToString();
+                    textBoxClientLastName.Text = PropertyGridView.SelectedRows[0].Cells["LastName"].Value.ToString();
+                    textBoxClientGender.Text = PropertyGridView.SelectedRows[0].Cells["Gender"].Value.ToString();
+                    textBoxClientBirthday.Text = PropertyGridView.SelectedRows[0].Cells["Birthday"].Value.ToString();
                 }
             }
             catch (Exception)

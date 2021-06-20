@@ -30,24 +30,26 @@ namespace RECIManagementSoftware
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelClient = new System.Windows.Forms.Label();
             this.panelAccountControl = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.AccountGridView = new System.Windows.Forms.DataGridView();
-            this.ClientGridView = new System.Windows.Forms.DataGridView();
+            this.CounterpartyGridView = new System.Windows.Forms.DataGridView();
+            this.PropertyGridView = new System.Windows.Forms.DataGridView();
             this.panelAccountControls = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelClientOutput = new System.Windows.Forms.Label();
             this.buttonClientDelete = new System.Windows.Forms.Button();
             this.buttonClientEdit = new System.Windows.Forms.Button();
             this.buttonClientAdd = new System.Windows.Forms.Button();
             this.labelClientLastName = new System.Windows.Forms.Label();
             this.labelClientFirstName = new System.Windows.Forms.Label();
-            this.labelClientBirthday = new System.Windows.Forms.Label();
+            this.labelPropertyPrice = new System.Windows.Forms.Label();
             this.labelClientGender = new System.Windows.Forms.Label();
             this.labelClientAccountID = new System.Windows.Forms.Label();
             this.textBoxClientLastName = new System.Windows.Forms.TextBox();
@@ -60,8 +62,8 @@ namespace RECIManagementSoftware
             this.panel1.SuspendLayout();
             this.panelAccountControl.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CounterpartyGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PropertyGridView)).BeginInit();
             this.panelAccountControls.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,70 +102,72 @@ namespace RECIManagementSoftware
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.AccountGridView);
-            this.panel3.Controls.Add(this.ClientGridView);
+            this.panel3.Controls.Add(this.CounterpartyGridView);
+            this.panel3.Controls.Add(this.PropertyGridView);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(327, 0);
+            this.panel3.Location = new System.Drawing.Point(346, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(692, 537);
+            this.panel3.Size = new System.Drawing.Size(673, 537);
             this.panel3.TabIndex = 2;
             // 
-            // AccountGridView
+            // CounterpartyGridView
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AccountGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.AccountGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.AccountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AccountGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AccountGridView.Location = new System.Drawing.Point(0, 117);
-            this.AccountGridView.Name = "AccountGridView";
-            this.AccountGridView.RowTemplate.Height = 25;
-            this.AccountGridView.Size = new System.Drawing.Size(692, 420);
-            this.AccountGridView.TabIndex = 0;
-            this.AccountGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountGridView_CellContentClick);
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CounterpartyGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.CounterpartyGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CounterpartyGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.CounterpartyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CounterpartyGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CounterpartyGridView.Location = new System.Drawing.Point(0, 117);
+            this.CounterpartyGridView.Name = "CounterpartyGridView";
+            this.CounterpartyGridView.RowTemplate.Height = 25;
+            this.CounterpartyGridView.Size = new System.Drawing.Size(673, 420);
+            this.CounterpartyGridView.TabIndex = 0;
+            this.CounterpartyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountGridView_CellContentClick);
             // 
-            // ClientGridView
+            // PropertyGridView
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ClientGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.ClientGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ClientGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.ClientGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ClientGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ClientGridView.Location = new System.Drawing.Point(0, 0);
-            this.ClientGridView.Name = "ClientGridView";
-            this.ClientGridView.RowTemplate.Height = 25;
-            this.ClientGridView.Size = new System.Drawing.Size(692, 537);
-            this.ClientGridView.TabIndex = 0;
-            this.ClientGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountGridView_CellContentClick);
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PropertyGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.PropertyGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PropertyGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.PropertyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PropertyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PropertyGridView.Location = new System.Drawing.Point(0, 0);
+            this.PropertyGridView.Name = "PropertyGridView";
+            this.PropertyGridView.RowTemplate.Height = 25;
+            this.PropertyGridView.Size = new System.Drawing.Size(673, 537);
+            this.PropertyGridView.TabIndex = 0;
+            this.PropertyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountGridView_CellContentClick);
             // 
             // panelAccountControls
             // 
             this.panelAccountControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            this.panelAccountControls.Controls.Add(this.checkBox2);
+            this.panelAccountControls.Controls.Add(this.checkBox1);
             this.panelAccountControls.Controls.Add(this.labelClientOutput);
             this.panelAccountControls.Controls.Add(this.buttonClientDelete);
             this.panelAccountControls.Controls.Add(this.buttonClientEdit);
             this.panelAccountControls.Controls.Add(this.buttonClientAdd);
             this.panelAccountControls.Controls.Add(this.labelClientLastName);
             this.panelAccountControls.Controls.Add(this.labelClientFirstName);
-            this.panelAccountControls.Controls.Add(this.labelClientBirthday);
+            this.panelAccountControls.Controls.Add(this.labelPropertyPrice);
             this.panelAccountControls.Controls.Add(this.labelClientGender);
             this.panelAccountControls.Controls.Add(this.labelClientAccountID);
             this.panelAccountControls.Controls.Add(this.textBoxClientLastName);
@@ -174,8 +178,30 @@ namespace RECIManagementSoftware
             this.panelAccountControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelAccountControls.Location = new System.Drawing.Point(0, 0);
             this.panelAccountControls.Name = "panelAccountControls";
-            this.panelAccountControls.Size = new System.Drawing.Size(327, 537);
+            this.panelAccountControls.Size = new System.Drawing.Size(346, 537);
             this.panelAccountControls.TabIndex = 1;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkBox2.Location = new System.Drawing.Point(12, 212);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(110, 26);
+            this.checkBox2.TabIndex = 4;
+            this.checkBox2.Text = "Purchased";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.Location = new System.Drawing.Point(153, 212);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(99, 26);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "Occupied";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // labelClientOutput
             // 
@@ -195,7 +221,7 @@ namespace RECIManagementSoftware
             this.buttonClientDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClientDelete.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonClientDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.buttonClientDelete.Location = new System.Drawing.Point(234, 212);
+            this.buttonClientDelete.Location = new System.Drawing.Point(253, 244);
             this.buttonClientDelete.Name = "buttonClientDelete";
             this.buttonClientDelete.Size = new System.Drawing.Size(87, 40);
             this.buttonClientDelete.TabIndex = 2;
@@ -210,7 +236,7 @@ namespace RECIManagementSoftware
             this.buttonClientEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClientEdit.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonClientEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.buttonClientEdit.Location = new System.Drawing.Point(141, 212);
+            this.buttonClientEdit.Location = new System.Drawing.Point(160, 244);
             this.buttonClientEdit.Name = "buttonClientEdit";
             this.buttonClientEdit.Size = new System.Drawing.Size(87, 40);
             this.buttonClientEdit.TabIndex = 2;
@@ -225,7 +251,7 @@ namespace RECIManagementSoftware
             this.buttonClientAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClientAdd.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonClientAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.buttonClientAdd.Location = new System.Drawing.Point(48, 212);
+            this.buttonClientAdd.Location = new System.Drawing.Point(67, 244);
             this.buttonClientAdd.Name = "buttonClientAdd";
             this.buttonClientAdd.Size = new System.Drawing.Size(87, 40);
             this.buttonClientAdd.TabIndex = 2;
@@ -239,9 +265,9 @@ namespace RECIManagementSoftware
             this.labelClientLastName.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelClientLastName.Location = new System.Drawing.Point(12, 107);
             this.labelClientLastName.Name = "labelClientLastName";
-            this.labelClientLastName.Size = new System.Drawing.Size(93, 22);
+            this.labelClientLastName.Size = new System.Drawing.Size(75, 22);
             this.labelClientLastName.TabIndex = 1;
-            this.labelClientLastName.Text = "Last Name:";
+            this.labelClientLastName.Text = "Country:";
             // 
             // labelClientFirstName
             // 
@@ -249,19 +275,19 @@ namespace RECIManagementSoftware
             this.labelClientFirstName.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelClientFirstName.Location = new System.Drawing.Point(12, 72);
             this.labelClientFirstName.Name = "labelClientFirstName";
-            this.labelClientFirstName.Size = new System.Drawing.Size(96, 22);
+            this.labelClientFirstName.Size = new System.Drawing.Size(43, 22);
             this.labelClientFirstName.TabIndex = 1;
-            this.labelClientFirstName.Text = "First Name:";
+            this.labelClientFirstName.Text = "City:";
             // 
-            // labelClientBirthday
+            // labelPropertyPrice
             // 
-            this.labelClientBirthday.AutoSize = true;
-            this.labelClientBirthday.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelClientBirthday.Location = new System.Drawing.Point(12, 177);
-            this.labelClientBirthday.Name = "labelClientBirthday";
-            this.labelClientBirthday.Size = new System.Drawing.Size(79, 22);
-            this.labelClientBirthday.TabIndex = 1;
-            this.labelClientBirthday.Text = "Birthday:";
+            this.labelPropertyPrice.AutoSize = true;
+            this.labelPropertyPrice.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelPropertyPrice.Location = new System.Drawing.Point(12, 177);
+            this.labelPropertyPrice.Name = "labelPropertyPrice";
+            this.labelPropertyPrice.Size = new System.Drawing.Size(53, 22);
+            this.labelPropertyPrice.TabIndex = 1;
+            this.labelPropertyPrice.Text = "Price:";
             // 
             // labelClientGender
             // 
@@ -269,9 +295,9 @@ namespace RECIManagementSoftware
             this.labelClientGender.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelClientGender.Location = new System.Drawing.Point(12, 142);
             this.labelClientGender.Name = "labelClientGender";
-            this.labelClientGender.Size = new System.Drawing.Size(71, 22);
+            this.labelClientGender.Size = new System.Drawing.Size(77, 22);
             this.labelClientGender.TabIndex = 1;
-            this.labelClientGender.Text = "Gender:";
+            this.labelClientGender.Text = "Address:";
             // 
             // labelClientAccountID
             // 
@@ -279,14 +305,14 @@ namespace RECIManagementSoftware
             this.labelClientAccountID.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelClientAccountID.Location = new System.Drawing.Point(12, 37);
             this.labelClientAccountID.Name = "labelClientAccountID";
-            this.labelClientAccountID.Size = new System.Drawing.Size(93, 22);
+            this.labelClientAccountID.Size = new System.Drawing.Size(133, 22);
             this.labelClientAccountID.TabIndex = 1;
-            this.labelClientAccountID.Text = "AccountID:";
+            this.labelClientAccountID.Text = "CounterpartyID:";
             // 
             // textBoxClientLastName
             // 
             this.textBoxClientLastName.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxClientLastName.Location = new System.Drawing.Point(134, 107);
+            this.textBoxClientLastName.Location = new System.Drawing.Point(153, 107);
             this.textBoxClientLastName.Name = "textBoxClientLastName";
             this.textBoxClientLastName.Size = new System.Drawing.Size(187, 29);
             this.textBoxClientLastName.TabIndex = 0;
@@ -294,7 +320,7 @@ namespace RECIManagementSoftware
             // textBoxClientFirstName
             // 
             this.textBoxClientFirstName.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxClientFirstName.Location = new System.Drawing.Point(134, 72);
+            this.textBoxClientFirstName.Location = new System.Drawing.Point(153, 72);
             this.textBoxClientFirstName.Name = "textBoxClientFirstName";
             this.textBoxClientFirstName.Size = new System.Drawing.Size(187, 29);
             this.textBoxClientFirstName.TabIndex = 0;
@@ -302,7 +328,7 @@ namespace RECIManagementSoftware
             // textBoxClientBirthday
             // 
             this.textBoxClientBirthday.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxClientBirthday.Location = new System.Drawing.Point(134, 177);
+            this.textBoxClientBirthday.Location = new System.Drawing.Point(153, 177);
             this.textBoxClientBirthday.Name = "textBoxClientBirthday";
             this.textBoxClientBirthday.Size = new System.Drawing.Size(187, 29);
             this.textBoxClientBirthday.TabIndex = 0;
@@ -310,7 +336,7 @@ namespace RECIManagementSoftware
             // textBoxClientGender
             // 
             this.textBoxClientGender.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxClientGender.Location = new System.Drawing.Point(134, 142);
+            this.textBoxClientGender.Location = new System.Drawing.Point(153, 142);
             this.textBoxClientGender.Name = "textBoxClientGender";
             this.textBoxClientGender.Size = new System.Drawing.Size(187, 29);
             this.textBoxClientGender.TabIndex = 0;
@@ -318,7 +344,7 @@ namespace RECIManagementSoftware
             // textBoxClientAccountID
             // 
             this.textBoxClientAccountID.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxClientAccountID.Location = new System.Drawing.Point(134, 37);
+            this.textBoxClientAccountID.Location = new System.Drawing.Point(153, 37);
             this.textBoxClientAccountID.Name = "textBoxClientAccountID";
             this.textBoxClientAccountID.Size = new System.Drawing.Size(187, 29);
             this.textBoxClientAccountID.TabIndex = 0;
@@ -353,8 +379,8 @@ namespace RECIManagementSoftware
             this.panel1.PerformLayout();
             this.panelAccountControl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AccountGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CounterpartyGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PropertyGridView)).EndInit();
             this.panelAccountControls.ResumeLayout(false);
             this.panelAccountControls.PerformLayout();
             this.ResumeLayout(false);
@@ -367,7 +393,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.Label labelClient;
         private System.Windows.Forms.Panel panelAccountControl;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView ClientGridView;
+        private System.Windows.Forms.DataGridView PropertyGridView;
         private System.Windows.Forms.Panel panelAccountControls;
         private System.Windows.Forms.TextBox textBoxClientAccountID;
         private System.Windows.Forms.Panel panel2;
@@ -379,7 +405,7 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.TextBox textBoxClientLastName;
         private System.Windows.Forms.Label labelClientGender;
         private System.Windows.Forms.TextBox textBoxClientGender;
-        private System.Windows.Forms.Label labelClientBirthday;
+        private System.Windows.Forms.Label labelPropertyPrice;
         private System.Windows.Forms.TextBox textBoxClientBirthday;
         private System.Windows.Forms.Label labelMobile;
         private System.Windows.Forms.Button buttonClientEdit;
@@ -387,6 +413,8 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.Button buttonClientDelete;
         private System.Windows.Forms.Label labelClientOutput;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridView AccountGridView;
+        private System.Windows.Forms.DataGridView CounterpartyGridView;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

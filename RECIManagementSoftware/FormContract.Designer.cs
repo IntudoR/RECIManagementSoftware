@@ -53,6 +53,7 @@ namespace RECIManagementSoftware
             this.ClientGridView = new System.Windows.Forms.DataGridView();
             this.ContractGridView = new System.Windows.Forms.DataGridView();
             this.panelAccountControls = new System.Windows.Forms.Panel();
+            this.checkBoxContractPaid = new System.Windows.Forms.CheckBox();
             this.labelContractOutput = new System.Windows.Forms.Label();
             this.buttonContractDelete = new System.Windows.Forms.Button();
             this.buttonContractEdit = new System.Windows.Forms.Button();
@@ -61,13 +62,11 @@ namespace RECIManagementSoftware
             this.labelContractRentalID = new System.Windows.Forms.Label();
             this.labelContractExpires = new System.Windows.Forms.Label();
             this.labelContractDate = new System.Windows.Forms.Label();
-            this.labelContractPaid = new System.Windows.Forms.Label();
             this.labelContractEmployeeID = new System.Windows.Forms.Label();
             this.textBoxContractPayment = new System.Windows.Forms.TextBox();
             this.textBoxContractRentalID = new System.Windows.Forms.TextBox();
             this.textBoxContractExpires = new System.Windows.Forms.TextBox();
             this.textBoxContractDate = new System.Windows.Forms.TextBox();
-            this.textBoxContractPaid = new System.Windows.Forms.TextBox();
             this.textBoxContractEmployeeID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -286,6 +285,7 @@ namespace RECIManagementSoftware
             // panelAccountControls
             // 
             this.panelAccountControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            this.panelAccountControls.Controls.Add(this.checkBoxContractPaid);
             this.panelAccountControls.Controls.Add(this.labelContractOutput);
             this.panelAccountControls.Controls.Add(this.buttonContractDelete);
             this.panelAccountControls.Controls.Add(this.buttonContractEdit);
@@ -294,19 +294,28 @@ namespace RECIManagementSoftware
             this.panelAccountControls.Controls.Add(this.labelContractRentalID);
             this.panelAccountControls.Controls.Add(this.labelContractExpires);
             this.panelAccountControls.Controls.Add(this.labelContractDate);
-            this.panelAccountControls.Controls.Add(this.labelContractPaid);
             this.panelAccountControls.Controls.Add(this.labelContractEmployeeID);
             this.panelAccountControls.Controls.Add(this.textBoxContractPayment);
             this.panelAccountControls.Controls.Add(this.textBoxContractRentalID);
             this.panelAccountControls.Controls.Add(this.textBoxContractExpires);
             this.panelAccountControls.Controls.Add(this.textBoxContractDate);
-            this.panelAccountControls.Controls.Add(this.textBoxContractPaid);
             this.panelAccountControls.Controls.Add(this.textBoxContractEmployeeID);
             this.panelAccountControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelAccountControls.Location = new System.Drawing.Point(0, 0);
             this.panelAccountControls.Name = "panelAccountControls";
             this.panelAccountControls.Size = new System.Drawing.Size(327, 537);
             this.panelAccountControls.TabIndex = 1;
+            // 
+            // checkBoxContractPaid
+            // 
+            this.checkBoxContractPaid.AutoSize = true;
+            this.checkBoxContractPaid.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxContractPaid.Location = new System.Drawing.Point(12, 215);
+            this.checkBoxContractPaid.Name = "checkBoxContractPaid";
+            this.checkBoxContractPaid.Size = new System.Drawing.Size(62, 26);
+            this.checkBoxContractPaid.TabIndex = 4;
+            this.checkBoxContractPaid.Text = "Paid";
+            this.checkBoxContractPaid.UseVisualStyleBackColor = true;
             // 
             // labelContractOutput
             // 
@@ -326,7 +335,7 @@ namespace RECIManagementSoftware
             this.buttonContractDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonContractDelete.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonContractDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.buttonContractDelete.Location = new System.Drawing.Point(234, 247);
+            this.buttonContractDelete.Location = new System.Drawing.Point(234, 257);
             this.buttonContractDelete.Name = "buttonContractDelete";
             this.buttonContractDelete.Size = new System.Drawing.Size(87, 40);
             this.buttonContractDelete.TabIndex = 2;
@@ -341,7 +350,7 @@ namespace RECIManagementSoftware
             this.buttonContractEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonContractEdit.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonContractEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.buttonContractEdit.Location = new System.Drawing.Point(141, 247);
+            this.buttonContractEdit.Location = new System.Drawing.Point(141, 257);
             this.buttonContractEdit.Name = "buttonContractEdit";
             this.buttonContractEdit.Size = new System.Drawing.Size(87, 40);
             this.buttonContractEdit.TabIndex = 2;
@@ -356,7 +365,7 @@ namespace RECIManagementSoftware
             this.buttonContractAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonContractAdd.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonContractAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.buttonContractAdd.Location = new System.Drawing.Point(48, 247);
+            this.buttonContractAdd.Location = new System.Drawing.Point(48, 257);
             this.buttonContractAdd.Name = "buttonContractAdd";
             this.buttonContractAdd.Size = new System.Drawing.Size(87, 40);
             this.buttonContractAdd.TabIndex = 2;
@@ -388,7 +397,7 @@ namespace RECIManagementSoftware
             // 
             this.labelContractExpires.AutoSize = true;
             this.labelContractExpires.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelContractExpires.Location = new System.Drawing.Point(12, 212);
+            this.labelContractExpires.Location = new System.Drawing.Point(12, 177);
             this.labelContractExpires.Name = "labelContractExpires";
             this.labelContractExpires.Size = new System.Drawing.Size(70, 22);
             this.labelContractExpires.TabIndex = 1;
@@ -398,21 +407,11 @@ namespace RECIManagementSoftware
             // 
             this.labelContractDate.AutoSize = true;
             this.labelContractDate.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelContractDate.Location = new System.Drawing.Point(12, 177);
+            this.labelContractDate.Location = new System.Drawing.Point(12, 142);
             this.labelContractDate.Name = "labelContractDate";
             this.labelContractDate.Size = new System.Drawing.Size(49, 22);
             this.labelContractDate.TabIndex = 1;
             this.labelContractDate.Text = "Date:";
-            // 
-            // labelContractPaid
-            // 
-            this.labelContractPaid.AutoSize = true;
-            this.labelContractPaid.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelContractPaid.Location = new System.Drawing.Point(12, 142);
-            this.labelContractPaid.Name = "labelContractPaid";
-            this.labelContractPaid.Size = new System.Drawing.Size(48, 22);
-            this.labelContractPaid.TabIndex = 1;
-            this.labelContractPaid.Text = "Paid:";
             // 
             // labelContractEmployeeID
             // 
@@ -443,7 +442,7 @@ namespace RECIManagementSoftware
             // textBoxContractExpires
             // 
             this.textBoxContractExpires.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxContractExpires.Location = new System.Drawing.Point(134, 212);
+            this.textBoxContractExpires.Location = new System.Drawing.Point(134, 177);
             this.textBoxContractExpires.Name = "textBoxContractExpires";
             this.textBoxContractExpires.Size = new System.Drawing.Size(187, 29);
             this.textBoxContractExpires.TabIndex = 0;
@@ -451,18 +450,10 @@ namespace RECIManagementSoftware
             // textBoxContractDate
             // 
             this.textBoxContractDate.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxContractDate.Location = new System.Drawing.Point(134, 177);
+            this.textBoxContractDate.Location = new System.Drawing.Point(134, 142);
             this.textBoxContractDate.Name = "textBoxContractDate";
             this.textBoxContractDate.Size = new System.Drawing.Size(187, 29);
             this.textBoxContractDate.TabIndex = 0;
-            // 
-            // textBoxContractPaid
-            // 
-            this.textBoxContractPaid.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxContractPaid.Location = new System.Drawing.Point(134, 142);
-            this.textBoxContractPaid.Name = "textBoxContractPaid";
-            this.textBoxContractPaid.Size = new System.Drawing.Size(187, 29);
-            this.textBoxContractPaid.TabIndex = 0;
             // 
             // textBoxContractEmployeeID
             // 
@@ -534,8 +525,6 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.TextBox textBoxContractRentalID;
         private System.Windows.Forms.Label labelContractPayment;
         private System.Windows.Forms.TextBox textBoxContractPayment;
-        private System.Windows.Forms.Label labelContractPaid;
-        private System.Windows.Forms.TextBox textBoxContractPaid;
         private System.Windows.Forms.Label labelContractDate;
         private System.Windows.Forms.TextBox textBoxContractDate;
         private System.Windows.Forms.Label labelMobile;
@@ -555,5 +544,6 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.DataGridView PropertyGridView;
         private System.Windows.Forms.TabPage tabPageContractClient;
         private System.Windows.Forms.DataGridView ClientGridView;
+        private System.Windows.Forms.CheckBox checkBoxContractPaid;
     }
 }

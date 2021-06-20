@@ -27,6 +27,7 @@ namespace RECIManagementSoftware
         }
 
         private string _connectionString;
+        private string _paid = String.Empty;
         SqlConnection connection = new();
 
         private void FormAccount_Load(object sender, EventArgs e)
@@ -146,12 +147,18 @@ namespace RECIManagementSoftware
         {
             try
             {
+                _paid = "";
+                if (checkBoxContractPaid.Checked)
+                    _paid = "1";
+                else
+                    _paid = "0";
+
                 string queryInsert = String.Format("INSERT INTO [reci].[Contract] " +
                     "VALUES('{0}','{1}','{2}','{3}','{4}','{5}')",
                     textBoxContractEmployeeID.Text,
                     textBoxContractRentalID.Text,
                     textBoxContractPayment.Text,
-                    textBoxContractPaid.Text,
+                    _paid,
                     textBoxContractDate.Text,
                     textBoxContractExpires.Text
                     );
@@ -180,7 +187,7 @@ namespace RECIManagementSoftware
                     textBoxContractEmployeeID.Text,
                     textBoxContractRentalID.Text,
                     textBoxContractPayment.Text,
-                    textBoxContractPaid.Text,
+                    checkBoxContractPaid.Checked.ToString(),
                     textBoxContractDate.Text,
                     textBoxContractExpires.Text
                     ), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -195,7 +202,13 @@ namespace RECIManagementSoftware
 
         private void buttonAccountDelete_Click(object sender, EventArgs e)
         {
-            if(textBoxContractExpires.Text == String.Empty)
+            _paid = "";
+            if (checkBoxContractPaid.Checked)
+                _paid = "1";
+            else
+                _paid = "0";
+
+            if (textBoxContractExpires.Text == String.Empty)
             {
                 labelContractOutput.ForeColor = Color.Crimson;
                 labelContractOutput.Text = "employee id and rental id fields required".ToUpper();
@@ -236,14 +249,26 @@ namespace RECIManagementSoftware
             {
                 if (ContractGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
+                    string paid;
+
                     ContractGridView.CurrentRow.Selected = true;
 
                     textBoxContractEmployeeID.Text = ContractGridView.SelectedRows[0].Cells["idEmployee"].Value.ToString();
                     textBoxContractRentalID.Text = ContractGridView.SelectedRows[0].Cells["idRental"].Value.ToString();
                     textBoxContractPayment.Text = ContractGridView.SelectedRows[0].Cells["Payment"].Value.ToString();
-                    textBoxContractPaid.Text = ContractGridView.SelectedRows[0].Cells["Paid"].Value.ToString();
+                    paid = ContractGridView.SelectedRows[0].Cells["Paid"].Value.ToString();
                     textBoxContractDate.Text = ContractGridView.SelectedRows[0].Cells["Date"].Value.ToString();
                     textBoxContractExpires.Text = ContractGridView.SelectedRows[0].Cells["Expires"].Value.ToString();
+
+                    switch(paid)
+                    {
+                        case "0":
+                            checkBoxContractPaid.Checked = false;
+                            break;
+                        case "1":
+                            checkBoxContractPaid.Checked = true;
+                            break;
+                    }
                 }
 
             }
@@ -257,6 +282,12 @@ namespace RECIManagementSoftware
         {
             try
             {
+                _paid = "";
+                if (checkBoxContractPaid.Checked)
+                    _paid = "1";
+                else
+                    _paid = "0";
+
                 string queryUpdate = String.Format("UPDATE [reci].[Contract] SET " +
                     "idEmployee='{0}',idRental='{1}',Payment='{2}'," +
                     "Paid='{3}',Date='{4}',Expires='{5}' " +
@@ -264,7 +295,7 @@ namespace RECIManagementSoftware
                     textBoxContractEmployeeID.Text,
                     textBoxContractRentalID.Text,
                     textBoxContractPayment.Text,
-                    textBoxContractPaid.Text,
+                    _paid,
                     textBoxContractDate.Text,
                     textBoxContractExpires.Text
                     );
@@ -293,7 +324,7 @@ namespace RECIManagementSoftware
                     textBoxContractEmployeeID.Text,
                     textBoxContractRentalID.Text,
                     textBoxContractPayment.Text,
-                    textBoxContractPaid.Text,
+                    _paid,
                     textBoxContractDate.Text,
                     textBoxContractExpires.Text
                     ), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
