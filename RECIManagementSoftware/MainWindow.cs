@@ -37,6 +37,7 @@ namespace RECIManagementSoftware
         FormOrder formOrder;
         FormProperty formProperty;
         FormRental formRental;
+        FormSubscription FormSubscription;
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -178,6 +179,13 @@ namespace RECIManagementSoftware
                     break;
 
                 case "Subscription":
+                    if(FormSubscription == null)
+                        FormSubscription = new();
+                    FormSubscription.TopLevel = false;
+                    FormSubscription.Dock = DockStyle.Fill;
+                    FormSubscription.TopMost = true;
+                    panel_ObjectView.Controls.Add(FormSubscription);
+                    FormSubscription.Show();
                     break;
 
                 case "Vault":
@@ -240,6 +248,8 @@ namespace RECIManagementSoftware
                     break;
 
                 case "Subscription":
+                    if (FormSubscription != null)
+                        FormSubscription.Hide();
                     break;
 
                 case "Vault":
