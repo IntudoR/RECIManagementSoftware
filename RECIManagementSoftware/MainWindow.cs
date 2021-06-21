@@ -176,6 +176,12 @@ namespace RECIManagementSoftware
                     panel_ObjectView.Controls.Add(formRental);
                     formRental.Show();
                     break;
+
+                case "Subscription":
+                    break;
+
+                case "Vault":
+                    break;
             }
         }
 
@@ -231,6 +237,12 @@ namespace RECIManagementSoftware
                 case "Rental":
                     if (formRental != null)
                         formRental.Hide();
+                    break;
+
+                case "Subscription":
+                    break;
+
+                case "Vault":
                     break;
             }
         }
