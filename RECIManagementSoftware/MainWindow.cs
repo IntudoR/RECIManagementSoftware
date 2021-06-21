@@ -38,6 +38,7 @@ namespace RECIManagementSoftware
         FormProperty formProperty;
         FormRental formRental;
         FormSubscription FormSubscription;
+        FormVault formVault;
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -189,6 +190,13 @@ namespace RECIManagementSoftware
                     break;
 
                 case "Vault":
+                    if (formVault == null)
+                        formVault = new();
+                    formVault.TopLevel = false;
+                    formVault.Dock = DockStyle.Fill;
+                    formVault.TopMost = true;
+                    panel_ObjectView.Controls.Add(formVault);
+                    formVault.Show();
                     break;
             }
         }
@@ -253,6 +261,8 @@ namespace RECIManagementSoftware
                     break;
 
                 case "Vault":
+                    if (formVault != null)
+                        formVault.Hide();
                     break;
             }
         }
