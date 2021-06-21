@@ -26,7 +26,7 @@ namespace RECIManagementSoftware
             connection.ConnectionString = _connectionString;
         }
 
-        private string _primaryId;
+        private string _id = String.Empty;
         private string _connectionString;
         SqlConnection connection = new();
 
@@ -105,6 +105,7 @@ namespace RECIManagementSoftware
 
                     connection.Close();
                 }
+                _id = String.Empty;
 
                 populate();
             }
@@ -132,16 +133,16 @@ namespace RECIManagementSoftware
 
         private void buttonAccountDelete_Click(object sender, EventArgs e)
         {
-            if(textBoxClientAccountID.Text == String.Empty)
+            if(_id == String.Empty)
             {
                 labelClientOutput.ForeColor = Color.Crimson;
-                labelClientOutput.Text = "AccountID field required".ToUpper();
+                labelClientOutput.Text = "Please select row to dele".ToUpper();
                 labelClientOutput.Visible = true;
             }
             else
             {
                 string queryDelete = String.Format("DELETE FROM [reci].[Client] " +
-                    "WHERE idClient = '{0}';", _primaryId);
+                    "WHERE idClient = '{0}';", _id);
 
                 using (var connection = new SqlConnection(_connectionString))
                 using (var command = new SqlCommand(queryDelete, connection))
@@ -154,6 +155,8 @@ namespace RECIManagementSoftware
                     labelClientOutput.Visible = true;
 
                     connection.Close();
+
+                    _id = String.Empty;
 
                     populate();
                 }
@@ -173,9 +176,11 @@ namespace RECIManagementSoftware
             {
                 if (ClientGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
+                    _id = String.Empty;
+
                     ClientGridView.CurrentRow.Selected = true;
 
-                    _primaryId = ClientGridView.SelectedRows[0].Cells[0].Value.ToString();
+                    _id = ClientGridView.SelectedRows[0].Cells[0].Value.ToString();
                     textBoxClientAccountID.Text = ClientGridView.SelectedRows[0].Cells["idAccount"].Value.ToString();
                     textBoxClientFirstName.Text = ClientGridView.SelectedRows[0].Cells["FirstName"].Value.ToString();
                     textBoxClientLastName.Text = ClientGridView.SelectedRows[0].Cells["LastName"].Value.ToString();
@@ -202,7 +207,7 @@ namespace RECIManagementSoftware
                     textBoxClientLastName.Text,
                     textBoxClientGender.Text,
                     textBoxClientBirthday.Text,
-                    _primaryId
+                    _id
                     );
 
                 using (var connection = new SqlConnection(_connectionString))

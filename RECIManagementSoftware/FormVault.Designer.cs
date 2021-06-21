@@ -30,20 +30,31 @@ namespace RECIManagementSoftware
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelVault = new System.Windows.Forms.Label();
             this.panelAccountControl = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPageAssignment = new System.Windows.Forms.TabPage();
+            this.AssignmentGridView = new System.Windows.Forms.DataGridView();
+            this.tabPageCounterparty = new System.Windows.Forms.TabPage();
+            this.CounterpartyGridView = new System.Windows.Forms.DataGridView();
+            this.tabPageSubsription = new System.Windows.Forms.TabPage();
+            this.SubscriptionGridView = new System.Windows.Forms.DataGridView();
+            this.tabPageAccount = new System.Windows.Forms.TabPage();
+            this.AccountGridView = new System.Windows.Forms.DataGridView();
+            this.tabPageCounterpartiesContract = new System.Windows.Forms.TabPage();
+            this.CounterpartiesContractsGridView = new System.Windows.Forms.DataGridView();
             this.VaultGridView = new System.Windows.Forms.DataGridView();
             this.panelAccountControls = new System.Windows.Forms.Panel();
             this.labelContractOutput = new System.Windows.Forms.Label();
@@ -56,22 +67,9 @@ namespace RECIManagementSoftware
             this.textBoxContractOrderID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPageAssignment = new System.Windows.Forms.TabPage();
-            this.AssignmentGridView = new System.Windows.Forms.DataGridView();
-            this.tabPageCounterparty = new System.Windows.Forms.TabPage();
-            this.CounterpartyGridView = new System.Windows.Forms.DataGridView();
-            this.tabPageSubsription = new System.Windows.Forms.TabPage();
-            this.SubscriptionGridView = new System.Windows.Forms.DataGridView();
-            this.tabPageAccount = new System.Windows.Forms.TabPage();
-            this.AccountGridView = new System.Windows.Forms.DataGridView();
-            this.tabPageCounterpartiesContract = new System.Windows.Forms.TabPage();
-            this.CounterpartiesContractsGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panelAccountControl.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VaultGridView)).BeginInit();
-            this.panelAccountControls.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageAssignment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssignmentGridView)).BeginInit();
@@ -83,6 +81,8 @@ namespace RECIManagementSoftware
             ((System.ComponentModel.ISupportInitialize)(this.AccountGridView)).BeginInit();
             this.tabPageCounterpartiesContract.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CounterpartiesContractsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VaultGridView)).BeginInit();
+            this.panelAccountControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -128,20 +128,184 @@ namespace RECIManagementSoftware
             this.panel3.Size = new System.Drawing.Size(676, 537);
             this.panel3.TabIndex = 2;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPageAssignment);
+            this.tabControl1.Controls.Add(this.tabPageCounterparty);
+            this.tabControl1.Controls.Add(this.tabPageSubsription);
+            this.tabControl1.Controls.Add(this.tabPageAccount);
+            this.tabControl1.Controls.Add(this.tabPageCounterpartiesContract);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControl1.Font = new System.Drawing.Font("Clear Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabControl1.Location = new System.Drawing.Point(0, 82);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(676, 455);
+            this.tabControl1.TabIndex = 2;
+            // 
+            // tabPageAssignment
+            // 
+            this.tabPageAssignment.Controls.Add(this.AssignmentGridView);
+            this.tabPageAssignment.Location = new System.Drawing.Point(4, 30);
+            this.tabPageAssignment.Name = "tabPageAssignment";
+            this.tabPageAssignment.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAssignment.Size = new System.Drawing.Size(668, 421);
+            this.tabPageAssignment.TabIndex = 0;
+            this.tabPageAssignment.Text = "Assignment";
+            this.tabPageAssignment.UseVisualStyleBackColor = true;
+            // 
+            // AssignmentGridView
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AssignmentGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.AssignmentGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.AssignmentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AssignmentGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AssignmentGridView.Location = new System.Drawing.Point(3, 3);
+            this.AssignmentGridView.Name = "AssignmentGridView";
+            this.AssignmentGridView.RowTemplate.Height = 25;
+            this.AssignmentGridView.Size = new System.Drawing.Size(662, 415);
+            this.AssignmentGridView.TabIndex = 1;
+            // 
+            // tabPageCounterparty
+            // 
+            this.tabPageCounterparty.Controls.Add(this.CounterpartyGridView);
+            this.tabPageCounterparty.Location = new System.Drawing.Point(4, 30);
+            this.tabPageCounterparty.Name = "tabPageCounterparty";
+            this.tabPageCounterparty.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCounterparty.Size = new System.Drawing.Size(668, 421);
+            this.tabPageCounterparty.TabIndex = 1;
+            this.tabPageCounterparty.Text = "Counterparty";
+            this.tabPageCounterparty.UseVisualStyleBackColor = true;
+            // 
+            // CounterpartyGridView
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CounterpartyGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.CounterpartyGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.CounterpartyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CounterpartyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CounterpartyGridView.Location = new System.Drawing.Point(3, 3);
+            this.CounterpartyGridView.Name = "CounterpartyGridView";
+            this.CounterpartyGridView.RowTemplate.Height = 25;
+            this.CounterpartyGridView.Size = new System.Drawing.Size(662, 415);
+            this.CounterpartyGridView.TabIndex = 1;
+            // 
+            // tabPageSubsription
+            // 
+            this.tabPageSubsription.Controls.Add(this.SubscriptionGridView);
+            this.tabPageSubsription.Location = new System.Drawing.Point(4, 30);
+            this.tabPageSubsription.Name = "tabPageSubsription";
+            this.tabPageSubsription.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSubsription.Size = new System.Drawing.Size(668, 421);
+            this.tabPageSubsription.TabIndex = 2;
+            this.tabPageSubsription.Text = "Subsribers";
+            this.tabPageSubsription.UseVisualStyleBackColor = true;
+            // 
+            // SubscriptionGridView
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SubscriptionGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.SubscriptionGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SubscriptionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.SubscriptionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SubscriptionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubscriptionGridView.Location = new System.Drawing.Point(3, 3);
+            this.SubscriptionGridView.Name = "SubscriptionGridView";
+            this.SubscriptionGridView.RowTemplate.Height = 25;
+            this.SubscriptionGridView.Size = new System.Drawing.Size(662, 415);
+            this.SubscriptionGridView.TabIndex = 1;
+            // 
+            // tabPageAccount
+            // 
+            this.tabPageAccount.Controls.Add(this.AccountGridView);
+            this.tabPageAccount.Location = new System.Drawing.Point(4, 30);
+            this.tabPageAccount.Name = "tabPageAccount";
+            this.tabPageAccount.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAccount.Size = new System.Drawing.Size(668, 421);
+            this.tabPageAccount.TabIndex = 3;
+            this.tabPageAccount.Text = "Account";
+            this.tabPageAccount.UseVisualStyleBackColor = true;
+            // 
+            // AccountGridView
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AccountGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.AccountGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.AccountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AccountGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AccountGridView.Location = new System.Drawing.Point(3, 3);
+            this.AccountGridView.Name = "AccountGridView";
+            this.AccountGridView.RowTemplate.Height = 25;
+            this.AccountGridView.Size = new System.Drawing.Size(662, 415);
+            this.AccountGridView.TabIndex = 1;
+            // 
+            // tabPageCounterpartiesContract
+            // 
+            this.tabPageCounterpartiesContract.Controls.Add(this.CounterpartiesContractsGridView);
+            this.tabPageCounterpartiesContract.Location = new System.Drawing.Point(4, 30);
+            this.tabPageCounterpartiesContract.Name = "tabPageCounterpartiesContract";
+            this.tabPageCounterpartiesContract.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCounterpartiesContract.Size = new System.Drawing.Size(668, 421);
+            this.tabPageCounterpartiesContract.TabIndex = 4;
+            this.tabPageCounterpartiesContract.Text = "Counterparties Contracts";
+            this.tabPageCounterpartiesContract.UseVisualStyleBackColor = true;
+            // 
+            // CounterpartiesContractsGridView
+            // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CounterpartiesContractsGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.CounterpartiesContractsGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CounterpartiesContractsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.CounterpartiesContractsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CounterpartiesContractsGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CounterpartiesContractsGridView.Location = new System.Drawing.Point(3, 3);
+            this.CounterpartiesContractsGridView.Name = "CounterpartiesContractsGridView";
+            this.CounterpartiesContractsGridView.RowTemplate.Height = 25;
+            this.CounterpartiesContractsGridView.Size = new System.Drawing.Size(662, 415);
+            this.CounterpartiesContractsGridView.TabIndex = 2;
+            // 
             // VaultGridView
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.VaultGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VaultGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.VaultGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.VaultGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.VaultGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.VaultGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.VaultGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.VaultGridView.Location = new System.Drawing.Point(0, 0);
@@ -275,170 +439,6 @@ namespace RECIManagementSoftware
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPageAssignment);
-            this.tabControl1.Controls.Add(this.tabPageCounterparty);
-            this.tabControl1.Controls.Add(this.tabPageSubsription);
-            this.tabControl1.Controls.Add(this.tabPageAccount);
-            this.tabControl1.Controls.Add(this.tabPageCounterpartiesContract);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Font = new System.Drawing.Font("Clear Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tabControl1.Location = new System.Drawing.Point(0, 82);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(676, 455);
-            this.tabControl1.TabIndex = 2;
-            // 
-            // tabPageAssignment
-            // 
-            this.tabPageAssignment.Controls.Add(this.AssignmentGridView);
-            this.tabPageAssignment.Location = new System.Drawing.Point(4, 30);
-            this.tabPageAssignment.Name = "tabPageAssignment";
-            this.tabPageAssignment.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAssignment.Size = new System.Drawing.Size(668, 421);
-            this.tabPageAssignment.TabIndex = 0;
-            this.tabPageAssignment.Text = "Assignment";
-            this.tabPageAssignment.UseVisualStyleBackColor = true;
-            // 
-            // AssignmentGridView
-            // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AssignmentGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.AssignmentGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
-            this.AssignmentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AssignmentGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AssignmentGridView.Location = new System.Drawing.Point(3, 3);
-            this.AssignmentGridView.Name = "AssignmentGridView";
-            this.AssignmentGridView.RowTemplate.Height = 25;
-            this.AssignmentGridView.Size = new System.Drawing.Size(662, 415);
-            this.AssignmentGridView.TabIndex = 1;
-            // 
-            // tabPageCounterparty
-            // 
-            this.tabPageCounterparty.Controls.Add(this.CounterpartyGridView);
-            this.tabPageCounterparty.Location = new System.Drawing.Point(4, 30);
-            this.tabPageCounterparty.Name = "tabPageCounterparty";
-            this.tabPageCounterparty.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCounterparty.Size = new System.Drawing.Size(668, 421);
-            this.tabPageCounterparty.TabIndex = 1;
-            this.tabPageCounterparty.Text = "Counterparty";
-            this.tabPageCounterparty.UseVisualStyleBackColor = true;
-            // 
-            // CounterpartyGridView
-            // 
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CounterpartyGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.CounterpartyGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
-            this.CounterpartyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CounterpartyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CounterpartyGridView.Location = new System.Drawing.Point(3, 3);
-            this.CounterpartyGridView.Name = "CounterpartyGridView";
-            this.CounterpartyGridView.RowTemplate.Height = 25;
-            this.CounterpartyGridView.Size = new System.Drawing.Size(662, 415);
-            this.CounterpartyGridView.TabIndex = 1;
-            // 
-            // tabPageSubsription
-            // 
-            this.tabPageSubsription.Controls.Add(this.SubscriptionGridView);
-            this.tabPageSubsription.Location = new System.Drawing.Point(4, 30);
-            this.tabPageSubsription.Name = "tabPageSubsription";
-            this.tabPageSubsription.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSubsription.Size = new System.Drawing.Size(668, 421);
-            this.tabPageSubsription.TabIndex = 2;
-            this.tabPageSubsription.Text = "Subsribers";
-            this.tabPageSubsription.UseVisualStyleBackColor = true;
-            // 
-            // SubscriptionGridView
-            // 
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SubscriptionGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.SubscriptionGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SubscriptionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.SubscriptionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SubscriptionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SubscriptionGridView.Location = new System.Drawing.Point(3, 3);
-            this.SubscriptionGridView.Name = "SubscriptionGridView";
-            this.SubscriptionGridView.RowTemplate.Height = 25;
-            this.SubscriptionGridView.Size = new System.Drawing.Size(662, 415);
-            this.SubscriptionGridView.TabIndex = 1;
-            // 
-            // tabPageAccount
-            // 
-            this.tabPageAccount.Controls.Add(this.AccountGridView);
-            this.tabPageAccount.Location = new System.Drawing.Point(4, 30);
-            this.tabPageAccount.Name = "tabPageAccount";
-            this.tabPageAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAccount.Size = new System.Drawing.Size(668, 421);
-            this.tabPageAccount.TabIndex = 3;
-            this.tabPageAccount.Text = "Account";
-            this.tabPageAccount.UseVisualStyleBackColor = true;
-            // 
-            // AccountGridView
-            // 
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AccountGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
-            this.AccountGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            this.AccountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AccountGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AccountGridView.Location = new System.Drawing.Point(3, 3);
-            this.AccountGridView.Name = "AccountGridView";
-            this.AccountGridView.RowTemplate.Height = 25;
-            this.AccountGridView.Size = new System.Drawing.Size(662, 415);
-            this.AccountGridView.TabIndex = 1;
-            // 
-            // tabPageCounterpartiesContract
-            // 
-            this.tabPageCounterpartiesContract.Controls.Add(this.CounterpartiesContractsGridView);
-            this.tabPageCounterpartiesContract.Location = new System.Drawing.Point(4, 30);
-            this.tabPageCounterpartiesContract.Name = "tabPageCounterpartiesContract";
-            this.tabPageCounterpartiesContract.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCounterpartiesContract.Size = new System.Drawing.Size(668, 421);
-            this.tabPageCounterpartiesContract.TabIndex = 4;
-            this.tabPageCounterpartiesContract.Text = "Counterparties Contracts";
-            this.tabPageCounterpartiesContract.UseVisualStyleBackColor = true;
-            // 
-            // CounterpartiesContractsGridView
-            // 
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CounterpartiesContractsGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
-            this.CounterpartiesContractsGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CounterpartiesContractsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            this.CounterpartiesContractsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CounterpartiesContractsGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CounterpartiesContractsGridView.Location = new System.Drawing.Point(3, 3);
-            this.CounterpartiesContractsGridView.Name = "CounterpartiesContractsGridView";
-            this.CounterpartiesContractsGridView.RowTemplate.Height = 25;
-            this.CounterpartiesContractsGridView.Size = new System.Drawing.Size(662, 415);
-            this.CounterpartiesContractsGridView.TabIndex = 2;
-            // 
             // FormVault
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -454,9 +454,6 @@ namespace RECIManagementSoftware
             this.panel1.PerformLayout();
             this.panelAccountControl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.VaultGridView)).EndInit();
-            this.panelAccountControls.ResumeLayout(false);
-            this.panelAccountControls.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPageAssignment.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AssignmentGridView)).EndInit();
@@ -468,6 +465,9 @@ namespace RECIManagementSoftware
             ((System.ComponentModel.ISupportInitialize)(this.AccountGridView)).EndInit();
             this.tabPageCounterpartiesContract.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CounterpartiesContractsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VaultGridView)).EndInit();
+            this.panelAccountControls.ResumeLayout(false);
+            this.panelAccountControls.PerformLayout();
             this.ResumeLayout(false);
 
         }

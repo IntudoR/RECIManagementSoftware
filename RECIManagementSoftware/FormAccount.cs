@@ -26,6 +26,7 @@ namespace RECIManagementSoftware
             connection.ConnectionString = _connectionString;
         }
 
+        private string _id = String.Empty;
         private string _connectionString;
         SqlConnection connection = new();
 
@@ -85,6 +86,7 @@ namespace RECIManagementSoftware
 
                     connection.Close();
                 }
+                _id = String.Empty;
 
                 populate();
             }
@@ -113,16 +115,16 @@ namespace RECIManagementSoftware
 
         private void buttonAccountDelete_Click(object sender, EventArgs e)
         {
-            if(textBoxAccountMobile.Text == String.Empty)
+            if(_id == String.Empty)
             {
                 labelAccountOutput.ForeColor = Color.Crimson;
-                labelAccountOutput.Text = "mobile field required".ToUpper();
+                labelAccountOutput.Text = "Please select row".ToUpper();
                 labelAccountOutput.Visible = true;
             }
             else
             {
                 string queryDelete = String.Format("DELETE FROM [reci].[Account] " +
-                    "WHERE Mobile = '{0}';", textBoxAccountMobile.Text);
+                    "WHERE idAccount = '{0}';", _id);
 
                 using (var connection = new SqlConnection(_connectionString))
                 using (var command = new SqlCommand(queryDelete, connection))
@@ -135,6 +137,8 @@ namespace RECIManagementSoftware
                     labelAccountOutput.Visible = true;
 
                     connection.Close();
+
+                    _id = String.Empty;
 
                     populate();
                 }
@@ -154,8 +158,11 @@ namespace RECIManagementSoftware
             {
                 if (AccountGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
+                    _id = String.Empty;
+
                     AccountGridView.CurrentRow.Selected = true;
 
+                    _id = AccountGridView.SelectedRows[0].Cells[0].Value.ToString();
                     textBoxAccountUsername.Text = AccountGridView.SelectedRows[0].Cells["Username"].Value.ToString();
                     textBoxAccountPassword.Text = AccountGridView.SelectedRows[0].Cells["Password"].Value.ToString();
                     textBoxAccountStatus.Text = AccountGridView.SelectedRows[0].Cells["Status"].Value.ToString();
@@ -174,58 +181,69 @@ namespace RECIManagementSoftware
 
         private void buttonAccountEdit_Click(object sender, EventArgs e)
         {
-            try
+            if (_id != String.Empty)
             {
-                string queryUpdate = String.Format("UPDATE [reci].[Account] SET " +
-                    "Username='{0}',Password='{1}',Status='{2}'," +
-                    "RegisterTime='{3}',Balance={4},Mobile='{5}',Email='{6}' " +
-                    "WHERE Mobile='{7}'",
-                    textBoxAccountUsername.Text,
-                    textBoxAccountPassword.Text,
-                    textBoxAccountStatus.Text,
-                    textBoxAccountRegisterTime.Text,
-                    textBoxAccountBalance.Text,
-                    textBoxAccountMobile.Text,
-                    textBoxAccountEmail.Text,
-                    textBoxAccountMobile.Text
-                    );
-
-                using (var connection = new SqlConnection(_connectionString))
-                using (var command = new SqlCommand(queryUpdate, connection))
+                try
                 {
-                    connection.Open();
+                    string queryUpdate = String.Format("UPDATE [reci].[Account] SET " +
+                        "Username='{0}',Password='{1}',Status='{2}'," +
+                        "RegisterTime='{3}',Balance={4},Mobile='{5}',Email='{6}' " +
+                        "WHERE idAccount='{7}'",
+                        textBoxAccountUsername.Text,
+                        textBoxAccountPassword.Text,
+                        textBoxAccountStatus.Text,
+                        textBoxAccountRegisterTime.Text,
+                        textBoxAccountBalance.Text,
+                        textBoxAccountMobile.Text,
+                        textBoxAccountEmail.Text,
+                        _id
+                        );
 
-                    command.ExecuteNonQuery();
+                    using (var connection = new SqlConnection(_connectionString))
+                    using (var command = new SqlCommand(queryUpdate, connection))
+                    {
+                        connection.Open();
 
-                    labelAccountOutput.Visible = true;
-                    labelAccountOutput.Text = "account successfully updated".ToUpper();
+                        command.ExecuteNonQuery();
 
+                        labelAccountOutput.Visible = true;
+                        labelAccountOutput.Text = "account successfully updated".ToUpper();
+
+                        connection.Close();
+                    }
+
+                    _id = String.Empty;
+
+                    populate();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(String.Format("Exception error.\n\nMessage:\n{0}\n\nSource:{1}\n\n" +
+                        "Input data:\n\n\tUsername: {2}\n\tPassword: {3}\n\tStatus: {4}\n\t" +
+                        "Register time: {5}\n\tBalance: {6}\n\tMobile: {7}\n\tEmail: {8}.",
+                        ex.Message, ex.Source,
+                        textBoxAccountUsername.Text,
+                        textBoxAccountPassword.Text,
+                        textBoxAccountStatus.Text,
+                        textBoxAccountRegisterTime.Text,
+                        textBoxAccountBalance.Text,
+                        textBoxAccountMobile.Text,
+                        textBoxAccountEmail.Text
+                        ), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                finally
+                {
                     connection.Close();
                 }
-
-                populate();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(String.Format("Exception error.\n\nMessage:\n{0}\n\nSource:{1}\n\n" +
-                    "Input data:\n\n\tUsername: {2}\n\tPassword: {3}\n\tStatus: {4}\n\t" +
-                    "Register time: {5}\n\tBalance: {6}\n\tMobile: {7}\n\tEmail: {8}.",
-                    ex.Message, ex.Source,
-                    textBoxAccountUsername.Text,
-                    textBoxAccountPassword.Text,
-                    textBoxAccountStatus.Text,
-                    textBoxAccountRegisterTime.Text,
-                    textBoxAccountBalance.Text,
-                    textBoxAccountMobile.Text,
-                    textBoxAccountEmail.Text
-                    ), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            finally
-            {
                 connection.Close();
             }
-            connection.Close();
+            else
+            {
+                labelAccountOutput.ForeColor = Color.Crimson;
+                labelAccountOutput.Text = "please select row".ToUpper();
+                labelAccountOutput.Visible = true;
+            }
         }
     }
 }
