@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="FormRental.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormProperty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -44,6 +47,9 @@
     </EmbeddedResource>
     <EmbeddedResource Update="FormContract - Copy.resx">
       <DependentUpon>FormContract.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FormCounterpartyContract - Copy.resx">
+      <DependentUpon>FormCounterpartyContract.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

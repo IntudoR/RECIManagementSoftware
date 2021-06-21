@@ -36,6 +36,7 @@ namespace RECIManagementSoftware
         FormEmployee formEmployee;
         FormOrder formOrder;
         FormProperty formProperty;
+        FormRental formRental;
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
@@ -165,6 +166,16 @@ namespace RECIManagementSoftware
                     panel_ObjectView.Controls.Add(formProperty);
                     formProperty.Show();
                     break;
+
+                case "Rental":
+                    if (formRental == null)
+                        formRental = new();
+                    formRental.TopLevel = false;
+                    formRental.Dock = DockStyle.Fill;
+                    formRental.TopMost = true;
+                    panel_ObjectView.Controls.Add(formRental);
+                    formRental.Show();
+                    break;
             }
         }
 
@@ -215,6 +226,11 @@ namespace RECIManagementSoftware
                 case "Property":
                     if (formProperty != null)
                         formProperty.Hide();
+                    break;
+
+                case "Rental":
+                    if (formRental != null)
+                        formRental.Hide();
                     break;
             }
         }
