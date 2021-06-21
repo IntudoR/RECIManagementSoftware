@@ -38,27 +38,27 @@ namespace RECIManagementSoftware
             this.labelContracts = new System.Windows.Forms.Label();
             this.panelAccountControl = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.AccountGridView = new System.Windows.Forms.DataGridView();
             this.SubscriptionGridView = new System.Windows.Forms.DataGridView();
             this.panelAccountControls = new System.Windows.Forms.Panel();
             this.labelContractOutput = new System.Windows.Forms.Label();
             this.buttonContractDelete = new System.Windows.Forms.Button();
             this.buttonContractEdit = new System.Windows.Forms.Button();
             this.buttonContractAdd = new System.Windows.Forms.Button();
+            this.labelSubscriptionExpires = new System.Windows.Forms.Label();
             this.labelSubscriptionPayment = new System.Windows.Forms.Label();
             this.labelSubscriptiontAccountID = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBoxContractMonthlyPayment = new System.Windows.Forms.TextBox();
             this.textBoxContractOrderID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.AccountGridView = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelSubscriptionExpires = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelAccountControl.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubscriptionGridView)).BeginInit();
             this.panelAccountControls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -104,12 +104,12 @@ namespace RECIManagementSoftware
             this.panel3.Size = new System.Drawing.Size(692, 537);
             this.panel3.TabIndex = 2;
             // 
-            // SubscriptionGridView
+            // AccountGridView
             // 
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SubscriptionGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.SubscriptionGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.AccountGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.AccountGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -117,7 +117,29 @@ namespace RECIManagementSoftware
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SubscriptionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.AccountGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.AccountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AccountGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AccountGridView.Location = new System.Drawing.Point(0, 87);
+            this.AccountGridView.Name = "AccountGridView";
+            this.AccountGridView.RowTemplate.Height = 25;
+            this.AccountGridView.Size = new System.Drawing.Size(692, 450);
+            this.AccountGridView.TabIndex = 1;
+            // 
+            // SubscriptionGridView
+            // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SubscriptionGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.SubscriptionGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SubscriptionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.SubscriptionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SubscriptionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SubscriptionGridView.Location = new System.Drawing.Point(0, 0);
@@ -202,6 +224,16 @@ namespace RECIManagementSoftware
             this.buttonContractAdd.UseVisualStyleBackColor = false;
             this.buttonContractAdd.Click += new System.EventHandler(this.buttonAccountAdd_Click);
             // 
+            // labelSubscriptionExpires
+            // 
+            this.labelSubscriptionExpires.AutoSize = true;
+            this.labelSubscriptionExpires.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelSubscriptionExpires.Location = new System.Drawing.Point(12, 107);
+            this.labelSubscriptionExpires.Name = "labelSubscriptionExpires";
+            this.labelSubscriptionExpires.Size = new System.Drawing.Size(70, 22);
+            this.labelSubscriptionExpires.TabIndex = 1;
+            this.labelSubscriptionExpires.Text = "Expires:";
+            // 
             // labelSubscriptionPayment
             // 
             this.labelSubscriptionPayment.AutoSize = true;
@@ -221,6 +253,14 @@ namespace RECIManagementSoftware
             this.labelSubscriptiontAccountID.Size = new System.Drawing.Size(93, 22);
             this.labelSubscriptiontAccountID.TabIndex = 1;
             this.labelSubscriptiontAccountID.Text = "AccountID:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(134, 107);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(187, 29);
+            this.textBox1.TabIndex = 0;
             // 
             // textBoxContractMonthlyPayment
             // 
@@ -253,46 +293,6 @@ namespace RECIManagementSoftware
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // AccountGridView
-            // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Clear Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AccountGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.AccountGridView.BackgroundColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.AccountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AccountGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AccountGridView.Location = new System.Drawing.Point(0, 87);
-            this.AccountGridView.Name = "AccountGridView";
-            this.AccountGridView.RowTemplate.Height = 25;
-            this.AccountGridView.Size = new System.Drawing.Size(692, 450);
-            this.AccountGridView.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(134, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 29);
-            this.textBox1.TabIndex = 0;
-            // 
-            // labelSubscriptionExpires
-            // 
-            this.labelSubscriptionExpires.AutoSize = true;
-            this.labelSubscriptionExpires.Font = new System.Drawing.Font("Fog Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelSubscriptionExpires.Location = new System.Drawing.Point(12, 107);
-            this.labelSubscriptionExpires.Name = "labelSubscriptionExpires";
-            this.labelSubscriptionExpires.Size = new System.Drawing.Size(70, 22);
-            this.labelSubscriptionExpires.TabIndex = 1;
-            this.labelSubscriptionExpires.Text = "Expires:";
-            // 
             // FormSubscription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -308,10 +308,10 @@ namespace RECIManagementSoftware
             this.panel1.PerformLayout();
             this.panelAccountControl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AccountGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubscriptionGridView)).EndInit();
             this.panelAccountControls.ResumeLayout(false);
             this.panelAccountControls.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -372,7 +372,6 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.TextBox textBoxClientAccountID;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labelClientAccountID;
-        private System.Windows.Forms.TextBox me;
         private System.Windows.Forms.Label labelClientFirstName;
         private System.Windows.Forms.TextBox textBoxClientFirstName;
         private System.Windows.Forms.Label labelClientLastName;
@@ -381,7 +380,6 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.TextBox textBoxClientGender;
         private System.Windows.Forms.Label labelClientBirthday;
         private System.Windows.Forms.TextBox textBoxClientBirthday;
-        private System.Windows.Forms.Label labelMobile;
         private System.Windows.Forms.Button buttonClientEdit;
         private System.Windows.Forms.Button buttonClientAdd;
         private System.Windows.Forms.Button buttonClientDelete;
