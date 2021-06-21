@@ -33,9 +33,9 @@ namespace RECIManagementSoftware
             // TEMPORARY.
             // ToDo: Delete
             checkBox_isRemoteServer.Checked = _remoteServer;
-            textBox_ServerName.Text = _serverName;
-            textBox_Username.Text = _usrName;
-            textBox_Password.Text = _password;
+            //textBox_ServerName.Text = _serverName;
+            //textBox_Username.Text = _usrName;
+            //textBox_Password.Text = _password;
 
             // While there is no solution how to send connection string to main form
             checkBox_isRemoteServer.Enabled = false;
