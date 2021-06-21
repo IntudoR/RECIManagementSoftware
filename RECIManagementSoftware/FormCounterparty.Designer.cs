@@ -125,6 +125,7 @@ namespace RECIManagementSoftware
             this.tabControl1.Controls.Add(this.tabPageContract);
             this.tabControl1.Controls.Add(this.tabPageOrder);
             this.tabControl1.Controls.Add(this.tabPageProperty);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl1.Font = new System.Drawing.Font("Clear Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabControl1.Location = new System.Drawing.Point(0, 72);
             this.tabControl1.Name = "tabControl1";
