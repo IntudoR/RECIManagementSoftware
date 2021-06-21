@@ -162,7 +162,7 @@ namespace RECIManagementSoftware
                 {
                     string queryUpdate = String.Format("UPDATE [reci].[Subscription] SET " +
                         "idAccount='{0}', Payment='{1}', Expires='{2}'" +
-                        "WHERE idRental='{3}'",
+                        "WHERE idSubscription='{3}'",
                         textBoxContractOrderID.Text,
                         textBoxContractMonthlyPayment.Text,
                         textBox1.Text,
