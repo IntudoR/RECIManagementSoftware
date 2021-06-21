@@ -14,9 +14,9 @@ namespace RECIManagementSoftware
 
         // TEMPORARY.
         // ToDo: Delete
-        private static string _serverName = "MSS2012";
-        private static string _usrName = "IntudoR";
-        private static string _password = "root";
+        //private static string _serverName = "MSS2012";
+        //private static string _usrName = "IntudoR";
+        //private static string _password = "root";
         private static bool _remoteServer = true;
 
         #region Construct current form
