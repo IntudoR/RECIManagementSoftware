@@ -126,7 +126,7 @@ namespace RECIManagementSoftware
         {
             try
             {
-                string queryInsert = String.Format("INSERT INTO [reci].[Contract] " +
+                string queryInsert = String.Format("INSERT INTO [reci].[Rental] " +
                     "VALUES('{0}','{1}')",
                     textBoxContractOrderID.Text,
                     textBoxContractMonthlyPayment.Text
@@ -175,7 +175,7 @@ namespace RECIManagementSoftware
             }
             else
             {
-                string queryDelete = String.Format("DELETE FROM [reci].[Cp_contract] " +
+                string queryDelete = String.Format("DELETE FROM [reci].[Rental] " +
                     "WHERE idRental = '{0}';", _id);
 
                 using (var connection = new SqlConnection(_connectionString))
@@ -197,52 +197,63 @@ namespace RECIManagementSoftware
 
         private void buttonAccountEdit_Click(object sender, EventArgs e)
         {
-            try
+            if (_id != String.Empty)
             {
-                string queryUpdate = String.Format("UPDATE [reci].[Cp_contract] SET " +
-                    "idProperty='{0}', idClient='{1}'" +
-                    "WHERE idRental='{2}'",
-                    textBoxContractOrderID.Text,
-                    textBoxContractMonthlyPayment.Text,
-                    _id
-                    );
-
-                using (var connection = new SqlConnection(_connectionString))
-                using (var command = new SqlCommand(queryUpdate, connection))
+                try
                 {
-                    connection.Open();
+                    string queryUpdate = String.Format("UPDATE [reci].[Rental] SET " +
+                        "idProperty='{0}', idClient='{1}'" +
+                        "WHERE idRental='{2}'",
+                        textBoxContractOrderID.Text,
+                        textBoxContractMonthlyPayment.Text,
+                        _id
+                        );
 
-                    command.ExecuteNonQuery();
+                    using (var connection = new SqlConnection(_connectionString))
+                    using (var command = new SqlCommand(queryUpdate, connection))
+                    {
+                        connection.Open();
 
-                    labelContractOutput.Visible = true;
-                    labelContractOutput.Text = "rental successfully updated".ToUpper();
+                        command.ExecuteNonQuery();
 
+                        labelContractOutput.Visible = true;
+                        labelContractOutput.Text = "rental successfully updated".ToUpper();
+
+                        connection.Close();
+                    }
+
+                    populate();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(String.Format("Exception error.\n\nMessage:\n{0}\n\nSource:{1}\n\n" +
+                        "Input data:\n\tOrderID: {2}\n\tMonthlyPayment: {3}",
+                        ex.Message, ex.Source,
+                        textBoxContractOrderID.Text,
+                        textBoxContractMonthlyPayment.Text
+                        ), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                finally
+                {
                     connection.Close();
                 }
-
-                populate();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(String.Format("Exception error.\n\nMessage:\n{0}\n\nSource:{1}\n\n" +
-                    "Input data:\n\tOrderID: {2}\n\tMonthlyPayment: {3}",
-                    ex.Message, ex.Source,
-                    textBoxContractOrderID.Text,
-                    textBoxContractMonthlyPayment.Text
-                    ), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            } 
-            finally
-            {
                 connection.Close();
             }
-            connection.Close();
+            else 
+            {
+                labelContractOutput.ForeColor = Color.Crimson;
+                labelContractOutput.Text = "please select row".ToUpper();
+                labelContractOutput.Visible = true;
+            }
         }
 
         private void AccountGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+                _id = String.Empty;
+
                 if (RentalGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
                     RentalGridView.CurrentRow.Selected = true;
