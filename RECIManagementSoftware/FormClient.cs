@@ -84,14 +84,31 @@ namespace RECIManagementSoftware
         {
             try
             {
-                string queryInsert = String.Format("INSERT INTO [reci].[Client] " +
-                    "VALUES('{0}','{1}','{2}','{3}','{4}')",
-                    textBoxClientAccountID.Text,
-                    textBoxClientFirstName.Text,
-                    textBoxClientLastName.Text,
-                    textBoxClientGender.Text,
-                    textBoxClientBirthday.Text
-                    );
+
+                string queryInsert = String.Empty;
+
+
+                if (textBoxClientAccountID.Text == "NULL" || textBoxClientAccountID.Text == "0" || textBoxClientAccountID.Text == String.Empty)
+                {
+                    queryInsert = String.Format("INSERT INTO [reci].[Client] " +
+                        "VALUES(NULL,'{0}','{1}','{2}','{3}')",
+                        textBoxClientFirstName.Text,
+                        textBoxClientLastName.Text,
+                        textBoxClientGender.Text,
+                        textBoxClientBirthday.Text
+                        );
+                }
+                else
+                {
+                    queryInsert = String.Format("INSERT INTO [reci].[Client] " +
+                        "VALUES('{0}','{1}','{2}','{3}','{4}')",
+                        textBoxClientAccountID.Text,
+                        textBoxClientFirstName.Text,
+                        textBoxClientLastName.Text,
+                        textBoxClientGender.Text,
+                        textBoxClientBirthday.Text
+                        );
+                }
 
                 using (var connection = new SqlConnection(_connectionString))
                 using (var command = new SqlCommand(queryInsert, connection))

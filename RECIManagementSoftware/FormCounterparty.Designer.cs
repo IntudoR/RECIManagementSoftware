@@ -37,7 +37,7 @@ namespace RECIManagementSoftware
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelAccount = new System.Windows.Forms.Label();
+            this.labelCounterparty = new System.Windows.Forms.Label();
             this.panelAccountControl = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -50,9 +50,9 @@ namespace RECIManagementSoftware
             this.CounterpartyGridView = new System.Windows.Forms.DataGridView();
             this.panelAccountControls = new System.Windows.Forms.Panel();
             this.labelCounterpartyOutput = new System.Windows.Forms.Label();
-            this.buttonContractDelete = new System.Windows.Forms.Button();
-            this.buttonContractEdit = new System.Windows.Forms.Button();
-            this.buttonContractAdd = new System.Windows.Forms.Button();
+            this.buttonCounterpartyDelete = new System.Windows.Forms.Button();
+            this.buttonCounterpartyEdit = new System.Windows.Forms.Button();
+            this.buttonCounterpartytAdd = new System.Windows.Forms.Button();
             this.labelCounterpartyLastName = new System.Windows.Forms.Label();
             this.labelCounterpartyFirstName = new System.Windows.Forms.Label();
             this.labelCounterpartyMobile = new System.Windows.Forms.Label();
@@ -80,24 +80,24 @@ namespace RECIManagementSoftware
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.panel1.Controls.Add(this.labelAccount);
+            this.panel1.Controls.Add(this.labelCounterparty);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1019, 63);
             this.panel1.TabIndex = 0;
             // 
-            // labelAccount
+            // labelCounterparty
             // 
-            this.labelAccount.AutoSize = true;
-            this.labelAccount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelAccount.Font = new System.Drawing.Font("Fog Sans", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.labelAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.labelAccount.Location = new System.Drawing.Point(0, 0);
-            this.labelAccount.Name = "labelAccount";
-            this.labelAccount.Size = new System.Drawing.Size(335, 50);
-            this.labelAccount.TabIndex = 0;
-            this.labelAccount.Text = "Manage Contracts";
+            this.labelCounterparty.AutoSize = true;
+            this.labelCounterparty.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelCounterparty.Font = new System.Drawing.Font("Fog Sans", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.labelCounterparty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            this.labelCounterparty.Location = new System.Drawing.Point(0, 0);
+            this.labelCounterparty.Name = "labelCounterparty";
+            this.labelCounterparty.Size = new System.Drawing.Size(427, 50);
+            this.labelCounterparty.TabIndex = 0;
+            this.labelCounterparty.Text = "Manage Counterparties";
             // 
             // panelAccountControl
             // 
@@ -125,7 +125,6 @@ namespace RECIManagementSoftware
             this.tabControl1.Controls.Add(this.tabPageContract);
             this.tabControl1.Controls.Add(this.tabPageOrder);
             this.tabControl1.Controls.Add(this.tabPageProperty);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl1.Font = new System.Drawing.Font("Clear Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabControl1.Location = new System.Drawing.Point(0, 72);
             this.tabControl1.Name = "tabControl1";
@@ -243,9 +242,9 @@ namespace RECIManagementSoftware
             // 
             this.panelAccountControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
             this.panelAccountControls.Controls.Add(this.labelCounterpartyOutput);
-            this.panelAccountControls.Controls.Add(this.buttonContractDelete);
-            this.panelAccountControls.Controls.Add(this.buttonContractEdit);
-            this.panelAccountControls.Controls.Add(this.buttonContractAdd);
+            this.panelAccountControls.Controls.Add(this.buttonCounterpartyDelete);
+            this.panelAccountControls.Controls.Add(this.buttonCounterpartyEdit);
+            this.panelAccountControls.Controls.Add(this.buttonCounterpartytAdd);
             this.panelAccountControls.Controls.Add(this.labelCounterpartyLastName);
             this.panelAccountControls.Controls.Add(this.labelCounterpartyFirstName);
             this.panelAccountControls.Controls.Add(this.labelCounterpartyMobile);
@@ -271,50 +270,50 @@ namespace RECIManagementSoftware
             this.labelCounterpartyOutput.Text = "label1";
             this.labelCounterpartyOutput.Visible = false;
             // 
-            // buttonContractDelete
+            // buttonCounterpartyDelete
             // 
-            this.buttonContractDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.buttonContractDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.buttonContractDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonContractDelete.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonContractDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.buttonContractDelete.Location = new System.Drawing.Point(234, 177);
-            this.buttonContractDelete.Name = "buttonContractDelete";
-            this.buttonContractDelete.Size = new System.Drawing.Size(87, 40);
-            this.buttonContractDelete.TabIndex = 2;
-            this.buttonContractDelete.Text = "Delete";
-            this.buttonContractDelete.UseVisualStyleBackColor = false;
-            this.buttonContractDelete.Click += new System.EventHandler(this.buttonAccountDelete_Click);
+            this.buttonCounterpartyDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.buttonCounterpartyDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.buttonCounterpartyDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCounterpartyDelete.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCounterpartyDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            this.buttonCounterpartyDelete.Location = new System.Drawing.Point(234, 177);
+            this.buttonCounterpartyDelete.Name = "buttonCounterpartyDelete";
+            this.buttonCounterpartyDelete.Size = new System.Drawing.Size(87, 40);
+            this.buttonCounterpartyDelete.TabIndex = 2;
+            this.buttonCounterpartyDelete.Text = "Delete";
+            this.buttonCounterpartyDelete.UseVisualStyleBackColor = false;
+            this.buttonCounterpartyDelete.Click += new System.EventHandler(this.buttonAccountDelete_Click);
             // 
-            // buttonContractEdit
+            // buttonCounterpartyEdit
             // 
-            this.buttonContractEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.buttonContractEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.buttonContractEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonContractEdit.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonContractEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.buttonContractEdit.Location = new System.Drawing.Point(141, 177);
-            this.buttonContractEdit.Name = "buttonContractEdit";
-            this.buttonContractEdit.Size = new System.Drawing.Size(87, 40);
-            this.buttonContractEdit.TabIndex = 2;
-            this.buttonContractEdit.Text = "Edit";
-            this.buttonContractEdit.UseVisualStyleBackColor = false;
-            this.buttonContractEdit.Click += new System.EventHandler(this.buttonAccountEdit_Click);
+            this.buttonCounterpartyEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.buttonCounterpartyEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.buttonCounterpartyEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCounterpartyEdit.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCounterpartyEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            this.buttonCounterpartyEdit.Location = new System.Drawing.Point(141, 177);
+            this.buttonCounterpartyEdit.Name = "buttonCounterpartyEdit";
+            this.buttonCounterpartyEdit.Size = new System.Drawing.Size(87, 40);
+            this.buttonCounterpartyEdit.TabIndex = 2;
+            this.buttonCounterpartyEdit.Text = "Edit";
+            this.buttonCounterpartyEdit.UseVisualStyleBackColor = false;
+            this.buttonCounterpartyEdit.Click += new System.EventHandler(this.buttonAccountEdit_Click);
             // 
-            // buttonContractAdd
+            // buttonCounterpartytAdd
             // 
-            this.buttonContractAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.buttonContractAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.buttonContractAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonContractAdd.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonContractAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
-            this.buttonContractAdd.Location = new System.Drawing.Point(48, 177);
-            this.buttonContractAdd.Name = "buttonContractAdd";
-            this.buttonContractAdd.Size = new System.Drawing.Size(87, 40);
-            this.buttonContractAdd.TabIndex = 2;
-            this.buttonContractAdd.Text = "Add";
-            this.buttonContractAdd.UseVisualStyleBackColor = false;
-            this.buttonContractAdd.Click += new System.EventHandler(this.buttonAccountAdd_Click);
+            this.buttonCounterpartytAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.buttonCounterpartytAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.buttonCounterpartytAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCounterpartytAdd.Font = new System.Drawing.Font("Clear Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCounterpartytAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(233)))), ((int)(((byte)(225)))));
+            this.buttonCounterpartytAdd.Location = new System.Drawing.Point(48, 177);
+            this.buttonCounterpartytAdd.Name = "buttonCounterpartytAdd";
+            this.buttonCounterpartytAdd.Size = new System.Drawing.Size(87, 40);
+            this.buttonCounterpartytAdd.TabIndex = 2;
+            this.buttonCounterpartytAdd.Text = "Add";
+            this.buttonCounterpartytAdd.UseVisualStyleBackColor = false;
+            this.buttonCounterpartytAdd.Click += new System.EventHandler(this.buttonAccountAdd_Click);
             // 
             // labelCounterpartyLastName
             // 
@@ -463,5 +462,9 @@ namespace RECIManagementSoftware
         private System.Windows.Forms.DataGridView OrderGridView;
         private System.Windows.Forms.TabPage tabPageProperty;
         private System.Windows.Forms.DataGridView PropertyGridView;
+        private System.Windows.Forms.Label labelCounterparty;
+        private System.Windows.Forms.Button buttonCounterpartyDelete;
+        private System.Windows.Forms.Button buttonCounterpartyEdit;
+        private System.Windows.Forms.Button buttonCounterpartytAdd;
     }
 }

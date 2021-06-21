@@ -27,6 +27,7 @@ namespace RECIManagementSoftware
         }
 
         private string _connectionString;
+        private string _id = String.Empty;
         SqlConnection connection = new();
 
         private void FormAccount_Load(object sender, EventArgs e)
@@ -123,6 +124,8 @@ namespace RECIManagementSoftware
 
         private void buttonAccountAdd_Click(object sender, EventArgs e)
         {
+            _id = String.Empty;
+
             try
             {
                 string queryInsert = String.Format("INSERT INTO [reci].[Counterparty] " +
@@ -170,16 +173,16 @@ namespace RECIManagementSoftware
 
         private void buttonAccountDelete_Click(object sender, EventArgs e)
         {
-            if(textBoxCounterpartyMobile.Text == String.Empty)
+            if(_id == String.Empty)
             {
                 labelCounterpartyOutput.ForeColor = Color.Crimson;
-                labelCounterpartyOutput.Text = "mobile field required".ToUpper();
+                labelCounterpartyOutput.Text = "Please select a row before delete".ToUpper();
                 labelCounterpartyOutput.Visible = true;
             }
             else
             {
                 string queryDelete = String.Format("DELETE FROM [reci].[Counterparty] " +
-                    "WHERE Mobile = '{0}';", textBoxCounterpartyMobile.Text);
+                    "WHERE idCounterparty = '{0}';", _id);
 
                 using (var connection = new SqlConnection(_connectionString))
                 using (var command = new SqlCommand(queryDelete, connection))
@@ -195,24 +198,83 @@ namespace RECIManagementSoftware
 
                     populate();
                 }
+
+                _id = String.Empty;
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void buttonAccountEdit_Click(object sender, EventArgs e)
         {
-            labelCounterpartyOutput.Visible = false;
-            labelCounterpartyOutput.ForeColor = Color.Black;
-            labelCounterpartyOutput.Text = String.Empty;
+            if (_id != String.Empty)
+            {
+                try
+                {
+                    string queryUpdate = String.Format("UPDATE [reci].[Counterparty] SET " +
+                        "idCPContract='{0}',FirstName='{1}',LastName='{2}'," +
+                        "Mobile='{3}' " +
+                        "WHERE idCounterparty='{4}'",
+                        textBoxCounterpartyContractID.Text,
+                        textBoxCounterpartyFirstName.Text,
+                        textBoxCounterpartyLastName.Text,
+                        textBoxCounterpartyMobile.Text,
+                        _id
+                        );
+
+                    using (var connection = new SqlConnection(_connectionString))
+                    using (var command = new SqlCommand(queryUpdate, connection))
+                    {
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
+
+                        labelCounterpartyOutput.Visible = true;
+                        labelCounterpartyOutput.Text = "counterparty successfully updated".ToUpper();
+
+                        connection.Close();
+                    }
+
+                    _id = String.Empty;
+
+                    populate();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(String.Format("Exception error.\n\nMessage:\n{0}\n\nSource:{1}\n\n" +
+                        "Input data:\n\tContractID: {2}\n\tFirstName: {3}\n\tLastName: {4}\n\t" +
+                        "Mobile: {5}",
+                        ex.Message, ex.Source,
+                        textBoxCounterpartyContractID.Text,
+                        textBoxCounterpartyFirstName.Text,
+                        textBoxCounterpartyLastName.Text,
+                        textBoxCounterpartyMobile.Text
+                        ), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                finally
+                {
+                    connection.Close();
+                }
+                connection.Close();
+            }
+            else
+            {
+                labelCounterpartyOutput.ForeColor = Color.Crimson;
+                labelCounterpartyOutput.Text = "Please select a row".ToUpper();
+                labelCounterpartyOutput.Visible = true;
+            }
         }
 
         private void AccountGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try 
+            try
             {
                 if (CounterpartyGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
+                    _id = String.Empty;
+
                     CounterpartyGridView.CurrentRow.Selected = true;
 
+                    _id = CounterpartyGridView.SelectedRows[0].Cells[0].Value.ToString();
                     textBoxCounterpartyContractID.Text = CounterpartyGridView.SelectedRows[0].Cells["idCPContract"].Value.ToString();
                     textBoxCounterpartyFirstName.Text = CounterpartyGridView.SelectedRows[0].Cells["FirstName"].Value.ToString();
                     textBoxCounterpartyLastName.Text = CounterpartyGridView.SelectedRows[0].Cells["LastName"].Value.ToString();
@@ -226,53 +288,11 @@ namespace RECIManagementSoftware
             }
         }
 
-        private void buttonAccountEdit_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                string queryUpdate = String.Format("UPDATE [reci].[Counterparty] SET " +
-                    "idCPContract='{0}',FirstName='{1}',LastName='{2}'," +
-                    "Mobile='{3}' " +
-                    "WHERE Mobile='{3}'",
-                    textBoxCounterpartyContractID.Text,
-                    textBoxCounterpartyFirstName.Text,
-                    textBoxCounterpartyLastName.Text,
-                    textBoxCounterpartyMobile.Text
-                    );
-
-                using (var connection = new SqlConnection(_connectionString))
-                using (var command = new SqlCommand(queryUpdate, connection))
-                {
-                    connection.Open();
-
-                    command.ExecuteNonQuery();
-
-                    labelCounterpartyOutput.Visible = true;
-                    labelCounterpartyOutput.Text = "contract successfully updated".ToUpper();
-
-                    connection.Close();
-                }
-
-                populate();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(String.Format("Exception error.\n\nMessage:\n{0}\n\nSource:{1}\n\n" +
-                    "Input data:\n\tContractID: {2}\n\tFirstName: {3}\n\tLastName: {4}\n\t" +
-                    "Mobile: {5}",
-                    ex.Message, ex.Source,
-                    textBoxCounterpartyContractID.Text,
-                    textBoxCounterpartyFirstName.Text,
-                    textBoxCounterpartyLastName.Text,
-                    textBoxCounterpartyMobile.Text
-                    ), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            } 
-            finally
-            {
-                connection.Close();
-            }
-            connection.Close();
+            labelCounterpartyOutput.Visible = false;
+            labelCounterpartyOutput.ForeColor = Color.Black;
+            labelCounterpartyOutput.Text = String.Empty;
         }
     }
 }
